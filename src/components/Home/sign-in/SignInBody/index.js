@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import SignInButton from "../SignInButton";
 import { withRouter } from "react-router-dom";
-import { MiddleSection }from "../../../../style/layout.js";
+import { MiddleSection, H1 }from "../../../../style/layout.js";
 import { Input }from "../../../../style/inputs.js";
 
 class SignInBody extends Component {
@@ -65,7 +65,7 @@ class SignInBody extends Component {
   render(){
     return (
       <MiddleSection>
-        <h1>Sign in</h1>
+        <H1>Sign in</H1>
         <this.Form onSubmit={ this.login } >
           <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="Username" required />
           <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="Password" required />
