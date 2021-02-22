@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SignInButton from "../SignInButton";
 import { withRouter } from "react-router-dom";
 import { MiddleSection, H1 }from "../../../../style/layout.js";
-import { Input }from "../../../../style/inputs.js";
+import { Input, InputDiv, }from "../../../../style/inputs.js";
 
 class SignInBody extends Component {
   constructor (props){
@@ -67,8 +67,14 @@ class SignInBody extends Component {
       <MiddleSection>
         <H1>Sign in</H1>
         <this.Form onSubmit={ this.login } >
-          <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="Username" required />
-          <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="Password" required />
+          <InputDiv>
+            <i class="far fa-user" />
+            <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="   Username" required />
+          </InputDiv>
+          <InputDiv>
+            <i class="fas fa-unlock-alt" />
+            <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
+          </InputDiv>
           <SignInButton />
         </this.Form>
       </MiddleSection>
