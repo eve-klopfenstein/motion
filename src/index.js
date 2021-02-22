@@ -26,7 +26,7 @@ const store = createStore(reducer);
 
 
 ReactDOM.render(
-  <Provider store={ store } >
+<Provider store={ store } >
   <Router>
     <Switch>
       <Route exact path="/" component={ SignIn } />
