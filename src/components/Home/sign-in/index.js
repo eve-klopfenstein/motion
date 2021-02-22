@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components'
 import SignUpLink from "./SignUpLink";
-import SignInBody from "./SignInBody";
+import SignInBody from "../sign-up/SignUpBody";
 
 const SignIn = () => {
     return (
