@@ -6,16 +6,14 @@ import { Link } from 'react-router-dom';
 const SignInButton = () => {
     return (
         <div>
-          <Link to="/feed" >
-             <button type="submit">sign in</button>
-          </Link>
+          <button type="submit">sign in</button>
         </div>
     )
 }
 
 const mapStateToProps = state => {
-
-
+    return {
+    }
 };
 
 const connection = connect(mapStateToProps);
