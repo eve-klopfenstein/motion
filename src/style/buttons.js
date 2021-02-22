@@ -10,7 +10,22 @@ export const TransparentButton = styled.button`
     :hover {
         cursor: pointer;
     }
-`
+`;
+
+export const DownloadButton = styled(TransparentButton)`
+    border: 1px solid white;   
+    :hover {
+        background: purple;
+        border: none;
+    }
+`;
+
+export const MiniButton = styled.img`
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+`;
+
 export const BigButton = styled.button`
     background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(149,27,205,1) 0%, rgba(52,124,139,1) 100%);
     border: none;
@@ -22,5 +37,4 @@ export const BigButton = styled.button`
     :hover {
         cursor: pointer;
     }
-
 `

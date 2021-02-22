@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+import './App.css';
+import {LeftSideHome} from './containers/Home/left-side'
+
+function App() {
+  return (
+    <div>
+      <LeftSideHome />
+=======
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,6 +30,7 @@ function App() {
           Learn React
         </a>
       </header>
+>>>>>>> 5db3cd168260312e17271e3f29d3486e3e544ee5
     </div>
 >>>>>>> 5db3cd168260312e17271e3f29d3486e3e544ee5
   );

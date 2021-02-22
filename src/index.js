@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SignIn from './components/Home/sign-in';
 import reportWebVitals from './reportWebVitals';
+import { SignIn } from './components/Home/sign-in';
 import { createStore } from "redux"
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -36,7 +36,5 @@ ReactDOM.render(
 </Provider>,
   document.getElementById('root')
 );
-
-
 
 reportWebVitals();
