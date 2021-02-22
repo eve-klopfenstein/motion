@@ -10,17 +10,19 @@ const SignUp = () => {
     return (
         <section>
             <h1>test</h1>
-          <SignInLink />
-          <SignUpBody />
-          <SignUpContinue />
+            <SignInLink />
+            <SignUpBody />
+            <SignUpContinue />
         </section>
     )
 }
 
 const mapStateToProps = state => {
-
+ return{state}
 };
 
 const connection = connect(mapStateToProps);
 const ConnectedApp = connection(SignUp);
 export default ConnectedApp;
+{/*  */}
+//

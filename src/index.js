@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
       return {...state, email: action.payload};
       break;
     }
-
+ 
 }
 
 const store = createStore(reducer);
@@ -26,17 +26,21 @@ const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={ store } >
-  <Router>
-    <Switch>
+    <Router>
+      <Switch>
    
-    <Route exact path="/sign-up" component={ SignUp } />
-      {/* <Route exact path="/sign-up" component={ SignUp } /> */}
-    </Switch>
-  </Router>
-</Provider>,
+        <Route exact path="/sign-up" component={ SignUp } />
+    
+      </Switch>
+    
+   </Router>
+     
+  </Provider>,
   document.getElementById('root')
 );
-
+//<SignUp />
  //<Route exact path="/" component={ SignIn } />
 
 reportWebVitals();
+{/*  */}
+{/*  */}

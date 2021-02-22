@@ -11,13 +11,18 @@ const SignUpBody = (props) => {
     event.preventDefault();
   } 
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    props.dispatch({type: "ADD_EMAIL", payload: email})
+  } 
+
     return (
         <div>
           <h1>Sign Up</h1>
-          <form onSubmit={props.dispatch({type: "ADD_EMAIL", payload: email})}>
+          <form onSubmit={submitHandler}>
             <label>E-mail<input type="email" placeholder="E-mail" value={email} />
             </label>
-               <SignUpContinue />
+              <SignUpContinue />
           </form>
         </div>
     )       
@@ -30,3 +35,5 @@ const mapStateToProps = state => {
 const connection = connect(mapStateToProps);
 const ConnectedApp = connection(SignUpBody);
 export default ConnectedApp;
+
+//
