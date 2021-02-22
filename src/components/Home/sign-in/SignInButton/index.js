@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { BigButton } from "../../../../style/buttons";
 
 const SignInButton = () => {
     return (
         <div>
-          <button type="submit">sign in</button>
+          <BigButton type="submit">sign in</BigButton>
         </div>
     )
 }

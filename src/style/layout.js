@@ -22,4 +22,9 @@ export const MiddleSection = styled.div`
     height: 60%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+`
+export const H1 = styled.h1`
+    font-size: 2rem;
+    margin-top: 100px;
 `
