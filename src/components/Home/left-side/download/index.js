@@ -1,27 +1,17 @@
 import apple from '../../../../assets/svgs/apple.svg';
 import googlePlay from '../../../../assets/svgs/google.svg';
-import { TransparentButton } from '../../../../style/buttons'
-import styled from 'styled-components';
-
-const DownloadContainer = styled.div`
-    min-height: 170px;
-    height: 20vh;
-    min-width: 315px;
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-`;
+import { DownloadButton } from '../../../../style/buttons'
+import { DownloadContainer } from '../../../../style/layout'
 
 export const Download = () => {
     return (
         <DownloadContainer>
-            <TransparentButton>
+            <DownloadButton>
                 <img src={apple} alt='apple logo' />
-            </TransparentButton>
-            <TransparentButton>
+            </DownloadButton>
+            <DownloadButton>
                 <img src={googlePlay} alt='google play' />
-            </TransparentButton>
+            </DownloadButton>
         </DownloadContainer>
     )
 }

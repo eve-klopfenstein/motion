@@ -1,13 +1,6 @@
 import logo from '../../../../assets/images/logo_white.png'
 import styled from 'styled-components';
-
-const LogoContainer = styled.div`
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-`;
+import { LogoContainer } from '../../../../style/layout'
 
 export const Logo = () => {
     return (

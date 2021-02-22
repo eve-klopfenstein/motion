@@ -1,23 +1,8 @@
 import twitter from '../../../../assets/svgs/twitter_icon.svg'
 import facebook from '../../../../assets/svgs/facebook_icon.svg'
 import instagram from '../../../../assets/svgs/instagram_icon.svg'
-import styled from 'styled-components';
 import { MiniButton } from '../../../../style/buttons'
-
-const SocialMediaContainer = styled.div`
-    height:15vh;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    div {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-    }
-`;
+import { SocialMediaContainer } from '../../../../style/layout'
 
 export const SocialMedia = () => {
     return (

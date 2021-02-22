@@ -6,9 +6,5 @@ export const Input = styled.input`
     border: none;
     border-bottom: 1px solid gray;
     background-color: white;
-<<<<<<< HEAD
-`
-=======
     margin-top: 40px;
 `
->>>>>>> development

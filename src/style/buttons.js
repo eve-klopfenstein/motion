@@ -12,9 +12,17 @@ export const TransparentButton = styled.button`
     }
 `;
 
+export const DownloadButton = styled(TransparentButton)`
+    border: 1px solid white;   
+    :hover {
+        background: purple;
+        border: none;
+    }
+`;
+
 export const MiniButton = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 `;
 

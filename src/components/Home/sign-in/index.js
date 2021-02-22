@@ -2,20 +2,18 @@ import { connect } from 'react-redux';
 import React from 'react';
 import SignUpLink from "./SignUpLink";
 import SignInBody from "./SignInBody";
-import { RightSide } from "../../../style/layout.js";
+import { RightSide, HomeContainer } from "../../../style/layout.js";
 import { LeftSideHome } from "../left-side"
 
 export const SignIn = () => {
     return (
-        <>
-          <section>
-            <LeftSideHome />
-          </section>
+        <HomeContainer>
+          <LeftSideHome />
           <RightSide>
             <SignUpLink />
             <SignInBody />
           </RightSide>
-        </>
+        </HomeContainer>
     )
 }
 
