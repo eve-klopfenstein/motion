@@ -1,15 +1,21 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import styled from 'styled-components'
 import SignUpLink from "./SignUpLink";
 import SignInBody from "./SignInBody";
+import { RightSide } from "../../../style/layout.js";
+import { LeftSideHome } from "../left-side"
 
-const SignIn = () => {
+export const SignIn = () => {
     return (
-        <section>
-          <SignUpLink />
-          <SignInBody />
-        </section>
+        <>
+          <section>
+            <LeftSideHome />
+          </section>
+          <RightSide>
+            <SignUpLink />
+            <SignInBody />
+          </RightSide>
+        </>
     )
 }
 
@@ -19,4 +25,4 @@ const mapStateToProps = state => {
 
 const connection = connect(mapStateToProps);
 const ConnectedApp = connection(SignIn);
-export default ConnectedApp;
+export default ConnectedApp; 

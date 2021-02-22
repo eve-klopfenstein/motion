@@ -7,4 +7,10 @@ export const TransparentButton = styled.button`
     border: 1px solid black;
     border-radius: 10rem;
     font-size: 0.9rem;
-`
+`;
+
+export const MiniButton = styled.img`
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+`;

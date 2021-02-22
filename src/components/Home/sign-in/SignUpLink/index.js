@@ -3,17 +3,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { TransparentButton } from "../../../../style/buttons.js";
+import { UpperSection, UpperSectionLabel, UpperSectionDiv } from "../../../../style/layout.js";
 
 const SignUpLink = () => {
     return (
-        <div>
-          <label>
-            Don't have an account?
+        <UpperSection>
+          <UpperSectionDiv>
+            <UpperSectionLabel htmlFor="transparent-button" >Don't have an account?</UpperSectionLabel>
             <Link to="/sign-up/" >
-            <TransparentButton>sign up</TransparentButton>
-             </Link>
-          </label>
-        </div>
+              <TransparentButton id="transparent-button" >sign up</TransparentButton>
+            </Link>
+          </UpperSectionDiv>
+        </UpperSection>
     )
 }
 
