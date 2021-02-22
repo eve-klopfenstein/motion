@@ -12,6 +12,9 @@ import './App.css';
 
 function App() {
   return (
+<<<<<<< HEAD
+   
+=======
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -29,6 +32,7 @@ function App() {
       </header>
 >>>>>>> 5db3cd168260312e17271e3f29d3486e3e544ee5
     </div>
+>>>>>>> 5db3cd168260312e17271e3f29d3486e3e544ee5
   );
 }
 
