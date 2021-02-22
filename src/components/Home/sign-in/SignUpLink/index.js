@@ -10,7 +10,7 @@ const SignUpLink = () => {
         <UpperSection>
           <UpperSectionDiv>
             <UpperSectionLabel htmlFor="transparent-button" >Don't have an account?</UpperSectionLabel>
-            <Link to="/sign-up/" >
+            <Link to="/sign-up/email" >
               <TransparentButton id="transparent-button" >sign up</TransparentButton>
             </Link>
           </UpperSectionDiv>
