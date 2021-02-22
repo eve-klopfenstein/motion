@@ -14,7 +14,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TOKEN':
-      console.log(action.payload);
       return {...state, token: action.payload};
       break;
     default:

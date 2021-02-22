@@ -2,6 +2,9 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import SignInButton from "../SignInButton";
+import { withRouter } from "react-router-dom";
+import { MiddleSection }from "../../../../style/layout.js";
+import { Input }from "../../../../style/inputs.js";
 
 class SignInBody extends Component {
   constructor (props){
@@ -11,6 +14,11 @@ class SignInBody extends Component {
       password: ''
     }
   }
+  
+  Form = styled.form`
+    display: flex;
+    flex-direction: column;
+  `
 
   setEmail = e => {
       this.setState({
@@ -41,25 +49,29 @@ class SignInBody extends Component {
       fetch(url, config)
       .then(res => res.status ? res.json() : console.log('login response not ok'))
       .then(data => {
-          console.log(data);
           const token = data.access;
           this.props.dispatch({type: 'SET_TOKEN', payload: token});
-          this.setState({
+          if (data.access){
+            this.props.history.push("/feed");
+          } else {
+            this.props.history.push("/");
+            this.setState({
               email: '',
               password: ''
-          });
+            });
+          }
       });
   }
   render(){
     return (
-      <div>
+      <MiddleSection>
         <h1>Sign in</h1>
-        <form action={ this.props.token ? "/feed" : "/" } onSubmit={ this.login } >
-          <input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="Username" />
-          <input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="Password" />
-          <SignInButton login={ this.login } />
-        </form>
-      </div>
+        <this.Form onSubmit={ this.login } >
+          <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="Username" required />
+          <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="Password" required />
+          <SignInButton />
+        </this.Form>
+      </MiddleSection>
     )
   }
 }
@@ -72,4 +84,4 @@ const mapStateToProps = state => {
 
 const connection = connect(mapStateToProps);
 const ConnectedApp = connection(SignInBody);
-export default ConnectedApp;
+export default withRouter(ConnectedApp);
