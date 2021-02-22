@@ -8,18 +8,25 @@ import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
-
+  token: ''
 };
 
 const reducer = (state = initialState, action) => {
-
+  switch (action.type) {
+    case 'SET_TOKEN':
+      return {...state, token: action.payload};
+      break;
+    default:
+      return state;
+      break;
+  }
 }
 
 const store = createStore(reducer);
 
 
 ReactDOM.render(
-  <Provider store={ store } >
+<Provider store={ store } >
   <Router>
     <Switch>
       <Route exact path="/" component={ SignIn } />
