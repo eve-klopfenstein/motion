@@ -6,9 +6,8 @@ const SignUp = (props) => {
     const [email, setEmail] = useState('');
     
         const continueHandler = (event) => {
-        event.preventDefault();
-            }
-    }
+            event.preventDefault();
+        }
 
    
     return (
@@ -16,7 +15,7 @@ const SignUp = (props) => {
             <form className="sign-up" >
                 <div>
                     <p>Already have an account?</p>
-                    <button type="button" onClick={signIn} >Continue</button>
+                    <button type="button" >Continue</button>
                 </div>
                              
                  <div className="form-tab">
@@ -32,9 +31,9 @@ const SignUp = (props) => {
     )
 }
 
-const mapStateToProps = ({ userLoginReducer: { authenticated } }) => {
+const mapStateToProps = () => {
     return {
-        authenticated: authenticated
+        
     };
 }
 

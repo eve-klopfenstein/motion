@@ -22,6 +22,7 @@ export const UpperSectionDiv = styled.div`
     height: 100%auto;
     width: 300px;
     margin-top: 10px;
+    margin-right: 20px;
 `
 export const UpperSectionLabel = styled.label`
     margin-top: 8px;
