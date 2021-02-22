@@ -9,3 +9,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+i {
+  border-bottom: 1px solid gray;
+  height: 28px;
+  margin-top: 4px;
+}
