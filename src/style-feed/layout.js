@@ -46,3 +46,8 @@ export const RightNavBarDiv = styled(LeftNavBarDiv)`
         height: 55%;
     }
 `
+
+//Posts Body
+export const PostStatusContainer = styled.div`
+    width: 100%;
+`

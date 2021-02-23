@@ -10,13 +10,13 @@ import { LeftSideHome } from '../left-side'
 const SignUp = (props) => {
     return (
         <>
-        <HomeContainer>
-          <LeftSideHome />
-          <RightSide>
-          <SignInLink />
-          <SignUpBody />
-          </RightSide>
-        </HomeContainer>
+            <HomeContainer>
+              <LeftSideHome />
+              <RightSide>
+              <SignInLink />
+              <SignUpBody />
+              </RightSide>
+            </HomeContainer>
         </>
     )
 }
