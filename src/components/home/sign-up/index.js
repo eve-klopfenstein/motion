@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'
 import SignInLink from "./SignInLink";
 import SignUpBody from "./SignUpBody";
 import SignUpContinue from "./SignUpContinue"
 
-const SignUp = (props) => {
+export const SignUp = (props) => {
     const [email, setEmail] = useState('');
     
     

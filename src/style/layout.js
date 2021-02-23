@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import backgroundImg from '../assets/images/background_image.png';
+import { CheckCircle } from '@styled-icons/boxicons-regular/CheckCircle';
 
 //Overall Home
 export const HomeContainer = styled.section`
     display: flex;
 `;
-
 
 //Right-side Home
 export const RightSide = styled.section`
@@ -38,8 +38,14 @@ export const H1 = styled.h1`
     margin-top: 100px;
 `
 
-//Left-side Home
+//Right-side Congratulations
+export const CongratulationsIcon = styled(CheckCircle)`
+    width: 150px;
+    height: 150px;
+    color: #c568ff;
+`;
 
+//Left-side Home
 export const LeftSideContainer = styled.div`
     width: 40%;
     height: 100vh;

@@ -24,10 +24,14 @@ export const MiniButton = styled.img`
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    opacity: 70%;
+    :hover {
+        opacity: 100%;
+    }
 `;
 
 export const BigButton = styled.button`
-    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(149,27,205,1) 0%, rgba(52,124,139,1) 100%);
+    background-image: linear-gradient(115deg, #c568ff 0%, #6e91f6);
     border: none;
     border-radius: 10rem;
     width: 18rem;
@@ -37,4 +41,23 @@ export const BigButton = styled.button`
     :hover {
         cursor: pointer;
     }
+`
+
+export const ThreeDotsContainer = styled.div`
+    margin-top: 40px;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+`
+
+export const SmallDotTransparent = styled.div`
+    width: 8px;
+    height: 8px;
+    border: 0.5px solid #c568ff;
+    border-radius: 50%;
+`
+
+export const SmallDotBlack = styled(SmallDotTransparent)`
+    border: 0.5px solid black;
+    background: black;
 `
