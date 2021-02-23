@@ -4,6 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Congratulations from "./components/Home/Congratulations";
+import Feed from './components/Feed'
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
@@ -55,8 +56,10 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={ SignIn } />
       <Route exact path="/sign-up/email" component={ SignUp } />
-      <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
+      <Route exact path="/sign-up/congratulations" component={ Congratulations } />
       {/* <Route exact path="/sign-up/verification/" component={ Verification }/>     */}
+      <Route exact path="/feed" component={ Feed } />  
+      {/* don't forget to change to /feed/:id */}
     </Switch>
   </Router>
 </Provider>,
