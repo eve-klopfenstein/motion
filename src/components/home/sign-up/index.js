@@ -25,4 +25,6 @@ const mapStateToProps = () => {
     };
 }
 
-export default connect(mapStateToProps)(SignUp);
+const connection = connect(mapStateToProps);
+const ConnectedApp = connection(SignUp);
+export default ConnectedApp;
