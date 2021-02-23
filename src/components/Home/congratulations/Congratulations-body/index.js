@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { H1, RightSide, MiddleSection, CongratulationsIcon } from "../../../../style/layout";
 import { useSelector } from 'react-redux';
 import { BigButton } from '../../../../style/buttons';
