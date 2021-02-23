@@ -1,4 +1,4 @@
-import { NavBarContainer, LeftNavBarDiv, RightNavBarDiv, LogoDiv, PostsDiv, FriendsDiv } from '../../../style-feed/layout'
+import { NavBarContainer, LeftNavBarDiv, RightNavBarDiv, LogoDiv, PostsDiv, FriendsDiv } from '../../../style-feed/Nav/layout'
 import logo from "../../../assets/images/logo.png";
 import postsLogo from "../../../assets/images/posts_logo.png";
 import friends from "../../../assets/svgs/icon-friends.svg";

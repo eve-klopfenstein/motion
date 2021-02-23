@@ -7,11 +7,8 @@ import { TransparentButton } from "../../../../style/buttons.js";
 const SignUpContinue = () => {
 
     return (
-        <div>          
-            
+        <div>
             <TransparentButton>Continue</TransparentButton>
-           
-         
         </div>
     )
 }

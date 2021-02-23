@@ -23,7 +23,9 @@ const CongratulationsBody = () => {
                 <CongratulationsIcon />
                 <p>We've sent a confirmation code to your mail</p>
                 <EmailP>{email}</EmailP>
+                <Link to="/sign-up/verification">
                 <NewButton>continue</NewButton>
+                </Link>
                 <ThreeDotsContainer>
                     <Link to='/sign-up/email'>
                         <SmallDotTransparent />

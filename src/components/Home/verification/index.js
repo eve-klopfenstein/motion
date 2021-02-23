@@ -95,8 +95,16 @@ class Verification extends Component {
           body: JSON.stringify(body)
       };
       fetch(url, config)
-      .then(res => res.status===200 ? "ok" : console.log('validation response not ok'))
-  }
+      .then(res => res.json())
+      .then(data => { 
+          if(data.user){ 
+            this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
+            this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
+            this.props.dispatch({type: 'ADD_USER_NAME', payload: data.user.username});
+        }else{
+         console.log('validation response not ok')};
+  });
+}
   render(){
     return (
       <MiddleSection >

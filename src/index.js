@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
-import Congratulations from "./components/Home/Congratulations";
 import Verification from "./components/Home/verification";
-import Feed from "./components/Feed"
+import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
+import Feed from './components/Feed';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,7 +14,10 @@ import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const initialState = {
   token: '',
   email: '',
-  id: ''
+  id: '',
+  first_name: '',
+  last_name: '',
+  user_name: ''
 };
 
 
@@ -29,6 +32,15 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_ID':
       return {...state, id: action.payload};
+      break;
+    case 'ADD_FIRST_NAME':
+      return {...state, first_name: action.payload};
+      break;
+    case 'ADD_LAST_NAME':
+      return {...state, last_name: action.payload};
+      break;
+    case 'ADD_USERNAME':
+      return {...state, user_name: action.payload};
       break;
     default:
       return state;
@@ -45,10 +57,12 @@ ReactDOM.render(
       <Route exact path="/" component={ SignIn } />
       <Route exact path="/sign-up/email/" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
-      <Route exact path="/sign-up/verification/" component={ Verification } />
+      <Route exact path="/sign-up/verification/" component={ Verification }/>     
+      <Route exact path="/feed/:id" component={ Feed } />
     </Switch>
   </Router>
 </Provider>,
 document.getElementById('root')
 );
+
 reportWebVitals();

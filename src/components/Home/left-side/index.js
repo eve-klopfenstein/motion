@@ -15,7 +15,4 @@ export const LeftSideHome = () => {
     )
 }
 
-// var imgUrl_1 = '/images/about/parallax.jpg';
-//     const style_1 = {
-//             padding: '250px 0', 
-//             backgroundImage: 'url('+imgUrl_1+')',
+export default LeftSideHome;
