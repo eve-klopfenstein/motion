@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import {useState} from 'react'
 import styled from 'styled-components'
 import SignInLink from "./SignInLink";
 import SignUpBody from "./SignUpBody";
