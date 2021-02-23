@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { HomeContainer, RightSide, UpperSection, UpperSectionLabel } from '../../../style/layout';
 import {LeftSideHome} from '../left-side';
 import SignInLink from "./SignInLink";
-import SignUnBody from './SignUnBody';
+import SignUpBody from './SignUpBody';
 
 const SignUp = (props) => {
     return (
@@ -12,7 +12,7 @@ const SignUp = (props) => {
           <LeftSideHome />
           <RightSide>
           <SignInLink />
-          <SignUnBody />
+          <SignUpBody />
           </RightSide>
         </HomeContainer>
         </>

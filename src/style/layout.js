@@ -38,7 +38,7 @@ export const H1 = styled.h1`
     margin-top: 100px;
 `
 
-//Right-side Congratulations
+// Right-side Congratulations
 export const CongratulationsIcon = styled(CheckCircle)`
     width: 150px;
     height: 150px;

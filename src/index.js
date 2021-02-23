@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
-import Congratulations from "./components/Home/Congratulations";
+import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
@@ -16,19 +16,8 @@ const initialState = {
   id: ''
 };
 
-const reducer1 = (state = initialState, action) => {
-    switch(action.type) {
-      case 'ADD_EMAIL' : 
-      return {...state, email: action.payload};
-      break;
-    default:
-      return state;
-    }
- 
-  
-};
 
-const reducer2 = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TOKEN':
       return {...state, token: action.payload};
@@ -46,11 +35,8 @@ const reducer2 = (state = initialState, action) => {
   }
 }
 
-const combineReducer = combineReducers({
-    reducer1,reducer2
-})
 
-const store = createStore(combineReducer);
+const store = createStore(reducer);
 
 
 ReactDOM.render(
