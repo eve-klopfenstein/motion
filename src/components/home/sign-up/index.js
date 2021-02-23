@@ -1,9 +1,12 @@
 import React from 'react';
 import {useState} from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {connect} from 'react-redux'
 import SignInLink from "./SignInLink";
 import SignUpBody from './SignUpBody';
 import Verification from '.././verification';
+import { RightSide, HomeContainer} from "../../../style/layout.js";
+import { LeftSideHome } from "../left-side"
 
 const SignUp = (props) => {
     return (

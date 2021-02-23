@@ -5,8 +5,8 @@ import CompleteButton from "./CompleteButton";
 import { withRouter } from "react-router-dom";
 import { MiddleSection, H1 }from "../../../style/layout.js";
 import { Input, InputDiv, }from "../../../style/inputs.js";
-
- 
+import { BigButton, ThreeDotsContainer, SmallDotTransparent, SmallDotBlack } from '../../../style/buttons';
+import { Link } from 'react-router-dom'; 
 
  
 
@@ -161,7 +161,16 @@ class Verification extends Component {
             <i class="val repeat-password" />
             <Input value={ this.state.password_repeat } onChange={ this.setPassword2 } type="password" placeholder="Password repeat" required />
           </InputDiv>
-          </this.Form><CompleteButton />
+          
+          </this.Form>
+          <CompleteButton />
+          <ThreeDotsContainer>
+                    <Link to='/sign-up/email'>
+                        <SmallDotTransparent />
+                    </Link>
+                    <SmallDotTransparent />
+                    <SmallDotBlack />
+                </ThreeDotsContainer>
       </MiddleSection>
     )
   }
