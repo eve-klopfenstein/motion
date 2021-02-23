@@ -55,7 +55,7 @@ class SignInBody extends Component {
           this.props.dispatch({type: 'SET_TOKEN', payload: token});
           this.props.dispatch({type: 'ADD_ID', payload: id});
           if (data.access){
-            this.props.history.push("/feed");
+            this.props.history.push(`/feed/${data.user.id}`);
           } else {
             this.props.history.push("/");
             this.setState({
@@ -71,11 +71,11 @@ class SignInBody extends Component {
         <H1>Sign in</H1>
         <this.Form onSubmit={ this.login } >
           <InputDiv>
-            <i className="far fa-user" />
+            <i className="far fa-user input-i" />
             <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="   Username" required />
           </InputDiv>
           <InputDiv>
-            <i className="fas fa-unlock-alt" />
+            <i className="fas fa-unlock-alt input-i" />
             <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="   Password" required />
           </InputDiv>
           <SignInButton />
