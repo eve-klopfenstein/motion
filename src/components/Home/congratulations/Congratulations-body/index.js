@@ -18,7 +18,9 @@ const CongratulationsBody = () => {
                     <BigButton>Continue</BigButton>
                 {/* </Link> */}
                 <ThreeDotsContainer>
-                    <SmallDotTransparent />
+                    <Link to='/sign-up/email'>
+                        <SmallDotTransparent />
+                    </Link>
                     <SmallDotBlack />
                     <SmallDotTransparent />
                 </ThreeDotsContainer>
