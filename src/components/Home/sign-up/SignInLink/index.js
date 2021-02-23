@@ -1,26 +1,18 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import styled from 'styled-components';
+import { UpperSection, UpperSectionLabel, UpperSectionDiv } from '../../../../style/layout.js';
+import { TransparentButton } from '../../../../style/buttons.js';
 import { Link } from 'react-router-dom';
-import { TransparentButton } from "../../../../style/buttons.js";
 
 const SignInLink = () => {
     return (
-        <div>
-              <label htmlFor='trasparent-button'>
-            Already have an account?     
-            </label>
-            <Link to="/sign-in/" >
-                <TransparentButton id='trasparent-button'> Sign In</TransparentButton>
-             </Link>
-        </div>
+    <UpperSection>
+      <UpperSectionDiv>
+        <UpperSectionLabel htmlFor="sign-in-button">Already have an account?</UpperSectionLabel>
+        <Link to="/" >
+          <TransparentButton type="button" id="sign-in-button" >sign in</TransparentButton>
+        </Link>
+      </UpperSectionDiv>
+    </UpperSection>
     )
 }
 
-const mapStateToProps = state => {
-
-};
-
-const connection = connect(mapStateToProps);
-const ConnectedApp = connection(SignInLink);
-export default ConnectedApp;
+export default SignInLink;
