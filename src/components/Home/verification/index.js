@@ -15,7 +15,8 @@ grid-template-areas:
 "email username"
 "first second"
 "pw pw2"
-"button button";
+"button button"
+"button2 button2";
 `;
 
 class Verification extends Component {
@@ -94,27 +95,11 @@ class Verification extends Component {
           body: JSON.stringify(body)
       };
       fetch(url, config)
-      .then(res => res.status===200 ? console.log(res) : console.log('validation response not ok'))
-    //   .then(data => {
-    //         if (data.access){
-    //         this.props.history.push("/feed");
-    //       } else {
-    //         this.props.history.push("/");
-    //         this.setState({
-    //             code: '',
-    //             email: '', 
-    //             username:'',
-    //             first_name: '',
-    //             last_name:'',
-    //             password: '',
-    //             password_repeat: ''
-    //         });
-    //       }
-      //});
+      .then(res => res.status===200 ? "ok" : console.log('validation response not ok'))
   }
   render(){
     return (
-      <MiddleSection>
+      <MiddleSection >
         <H1>Verification</H1>
         <Form onSubmit={ this.verification } >
           
@@ -147,16 +132,20 @@ class Verification extends Component {
             <i className="val repeat-password" />
             <Input value={ this.state.password_repeat } onChange={ this.setPassword2 } type="password" placeholder="Password repeat" required />
           </InputDiv>
-          
-          </Form>
+            <div style={{display: "flex",
+          justifyContent: "center",alignItems: "flex-start",
+          gridArea:"button", width:"650px"}}>
           <CompleteButton />
-          <ThreeDotsContainer>
+          
+            </div>
+            <div style={{display: "flex",justifyContent: "center",gridArea:"button2", width:"650px"}}> <ThreeDotsContainer  >
                     <Link to='/sign-up/email'>
                         <SmallDotTransparent />
                     </Link>
                     <SmallDotTransparent />
                     <SmallDotBlack />
-                </ThreeDotsContainer>
+                </ThreeDotsContainer></div>
+          </Form>
       </MiddleSection>
     )
   }
