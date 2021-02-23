@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components'
 import SignUpLink from "./SignUpLink";
 import SignInBody from "./SignInBody";
-import { RightSide } from "../../../style/layout.js";
 
 const SignIn = () => {
     return (
