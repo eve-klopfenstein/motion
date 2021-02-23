@@ -1,14 +1,14 @@
 import React from 'react';
-import { NavBarContainer } from '../../../style-feed/layout.js';
+import { SearchBarContainer } from '../../../style-feed/Nav/layout.js';
 import LeftSearchBar from './LeftSearchBar';
 import RightSearchBar from './RightSearchBar';
 
 const SearchBar = () => {
     return (
-        <NavBarContainer>
+        <SearchBarContainer>
             <LeftSearchBar />
             <RightSearchBar />
-        </NavBarContainer>
+        </SearchBarContainer>
     )
 }
 

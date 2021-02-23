@@ -14,7 +14,10 @@ import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const initialState = {
   token: '',
   email: '',
-  id: ''
+  id: '',
+  first_name: '',
+  last_name: '',
+  user_name: ''
 };
 
 
@@ -29,6 +32,15 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_ID':
       return {...state, id: action.payload};
+      break;
+    case 'ADD_FIRST_NAME':
+      return {...state, first_name: action.payload};
+      break;
+    case 'ADD_LAST_NAME':
+      return {...state, last_name: action.payload};
+      break;
+    case 'ADD_USERNAME':
+      return {...state, user_name: action.payload};
       break;
     default:
       return state;

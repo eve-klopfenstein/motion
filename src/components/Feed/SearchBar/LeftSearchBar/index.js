@@ -1,10 +1,11 @@
-import { LeftSearchDiv } from '../../../../style-feed/layout.js';
+import { LeftSearchDiv } from '../../../../style-feed/Nav/layout.js';
+import { SearchInput } from '../../../../style-feed/Inputs/inputs.js';
 
 const LeftSearchBar = () => {
     return (
         <LeftSearchDiv>
-            <i class="fas fa-search search-i"/>
-            <input type="text" placeholder="Search posts..."  />
+            <i class="fas fa-search fa-lg search-i"/>
+            <SearchInput type="text" placeholder="Search posts..."  />
         </LeftSearchDiv>
     )
 }
