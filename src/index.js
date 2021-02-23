@@ -10,13 +10,18 @@ import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
-  token: ''
+  token: '',
+  email: ''
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TOKEN':
       return {...state, token: action.payload};
+      break;
+    case 'ADD_EMAIL':
+      console.log(action.payload);
+      return {...state, email: action.payload};
       break;
     default:
       return state;
