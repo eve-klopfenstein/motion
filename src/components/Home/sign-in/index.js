@@ -2,14 +2,15 @@ import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components'
 import SignUpLink from "./SignUpLink";
-import SignInBody from "../sign-up/SignUpBody";
+import SignInBody from "./SignInBody";
+import { RightSide } from "../../../style/layout.js";
 
 const SignIn = () => {
     return (
-        <section>
+        <RightSide>
           <SignUpLink />
           <SignInBody />
-        </section>
+        </RightSide>
     )
 }
 

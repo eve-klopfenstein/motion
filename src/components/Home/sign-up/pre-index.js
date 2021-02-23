@@ -8,7 +8,7 @@ const SignUp = (props) => {
         const continueHandler = (event) => {
         event.preventDefault();
             }
-    }
+    
 
  render() {  
     return (
