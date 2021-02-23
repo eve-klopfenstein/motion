@@ -19,7 +19,7 @@ export const UpperSection = styled.div`
 export const UpperSectionDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    height: 100%auto;
+    height: 100%;
     width: 300px;
     margin-top: 10px;
     margin-right: 20px;

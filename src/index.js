@@ -11,7 +11,8 @@ import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
   token: '',
-  email: ''
+  email: '',
+  id: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +23,9 @@ const reducer = (state = initialState, action) => {
     case 'ADD_EMAIL':
       console.log(action.payload);
       return {...state, email: action.payload};
+      break;
+    case 'ADD_ID':
+      return {...state, id: action.payload};
       break;
     default:
       return state;
