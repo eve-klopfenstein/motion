@@ -45,14 +45,14 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={ SignIn } />
-      <Route exact path="/sign-up/email" component={ SignUp } />
+      <Route exact path="/sign-up/email/" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
       {/* <Route exact path="/sign-up/verification/" component={ Verification }/>     */}
       <Route exact path="/feed/:id" component={ Feed } />
     </Switch>
   </Router>
 </Provider>,
-  document.getElementById('root')
+document.getElementById('root')
 );
 
 reportWebVitals();
