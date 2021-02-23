@@ -7,17 +7,34 @@ import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
+import {combineReducers } from 'redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
   token: '',
-  email: 'david@ssdf.com'
+  email: ''
 };
 
-const reducer = (state = initialState, action) => {
+const reducer1 = (state = initialState, action) => {
+    switch(action.type) {
+      case 'ADD_EMAIL' : 
+      return {...state, email: action.payload};
+      break;
+    default:
+      return state;
+    }
+ 
+  
+};
+
+const reducer2 = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TOKEN':
       return {...state, token: action.payload};
+      break;
+    case 'ADD_EMAIL':
+      console.log(action.payload);
+      return {...state, email: action.payload};
       break;
     default:
       return state;
@@ -25,7 +42,11 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-const store = createStore(reducer);
+const combineReducer = combineReducers({
+    reducer1,reducer2
+})
+
+const store = createStore(combineReducer);
 
 
 ReactDOM.render(
@@ -42,3 +63,5 @@ ReactDOM.render(
 );
 
 reportWebVitals();
+{/*  */}
+{/*  */}
