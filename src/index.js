@@ -13,22 +13,12 @@ import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
   token: '',
-  email: ''
+  email: '',
+  id: ''
 };
 
-const reducer1 = (state = initialState, action) => {
-    switch(action.type) {
-      case 'ADD_EMAIL' : 
-      return {...state, email: action.payload};
-      break;
-    default:
-      return state;
-    }
- 
-  
-};
 
-const reducer2 = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_TOKEN':
       return {...state, token: action.payload};
@@ -37,17 +27,17 @@ const reducer2 = (state = initialState, action) => {
       console.log(action.payload);
       return {...state, email: action.payload};
       break;
+    case 'ADD_ID':
+      return {...state, id: action.payload};
+      break;
     default:
       return state;
       break;
   }
 }
 
-const combineReducer = combineReducers({
-    reducer1,reducer2
-})
 
-const store = createStore(combineReducer);
+const store = createStore(reducer);
 
 
 ReactDOM.render(
