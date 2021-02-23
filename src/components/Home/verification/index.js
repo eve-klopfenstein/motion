@@ -8,7 +8,15 @@ import { Input, InputDiv, }from "../../../style/inputs.js";
 import { BigButton, ThreeDotsContainer, SmallDotTransparent, SmallDotBlack } from '../../../style/buttons';
 import { Link } from 'react-router-dom'; 
 
- 
+const Form = styled.form`
+display: grid;
+grid-template-areas: 
+"code code"
+"email username"
+"first second"
+"pw pw2"
+"button button";
+`;
 
 class Verification extends Component {
   constructor (props){
@@ -24,28 +32,6 @@ class Verification extends Component {
     }
   }
   
-//   Form = styled.form`
-//     display: grid;
-//     grid-template-rows: 1fr 1fr 1fr 1fr;
-//     grid-template-columns: 1fr 1fr;
-//     `
-    Form = styled.form`
-    display: grid;
-    grid-template-areas: 
-    "code code"
-    "email username"
-    "first second"
-    "pw pw2"
-    "button button"
-    ;
-    `
-    // Form = styled.form`
-    //     width: 500px;
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     justify-content: space-between;      
-    //`
-
     setValidationCode = e => {
         this.setState({
             code: e.target.value
@@ -108,61 +94,61 @@ class Verification extends Component {
           body: JSON.stringify(body)
       };
       fetch(url, config)
-      .then(res => res.status ? res.json() : console.log('validation response not ok'))
-      .then(data => {
-            if (data.access){
-            this.props.history.push("/feed");
-          } else {
-            this.props.history.push("/");
-            this.setState({
-                code: '',
-                email: '', 
-                username:'',
-                first_name: '',
-                last_name:'',
-                password: '',
-                password_repeat: ''
-            });
-          }
-      });
+      .then(res => res.status===200 ? console.log(res) : console.log('validation response not ok'))
+    //   .then(data => {
+    //         if (data.access){
+    //         this.props.history.push("/feed");
+    //       } else {
+    //         this.props.history.push("/");
+    //         this.setState({
+    //             code: '',
+    //             email: '', 
+    //             username:'',
+    //             first_name: '',
+    //             last_name:'',
+    //             password: '',
+    //             password_repeat: ''
+    //         });
+    //       }
+      //});
   }
   render(){
     return (
       <MiddleSection>
         <H1>Verification</H1>
-        <this.Form onSubmit={ this.verification } >
+        <Form onSubmit={ this.verification } >
           
           <InputDiv  style={{gridArea:"code", width:"650px"}}>
-            <i class="val code" />
+            <i className="val code" />
             <Input style={{width:"800px"}} value={ this.state.code } onChange={ this.setValidationCode } type="text" placeholder="Validation code" required />
           </InputDiv>
         
            <InputDiv>
-            <i class="val email" />
+            <i className="val email" />
             <Input value={ this.state.email } onChange={ this.setEmail } type="email" placeholder="Email" required />
           </InputDiv>
           <InputDiv>
-            <i class="val user" />
+            <i className="val user" />
             <Input value={ this.state.username } onChange={ this.setUser } type="text" placeholder="Username" required />
           </InputDiv>      
           <InputDiv>
-            <i class="val firstname" />
+            <i className="val firstname" />
             <Input value={ this.state.first_name } onChange={ this.setFirstname } type="text" placeholder="First name" required />
           </InputDiv>
           <InputDiv>
-            <i class="val lastname" />
+            <i className="val lastname" />
             <Input value={ this.state.last_name } onChange={ this.setLastname } type="text" placeholder="Last name" required />
           </InputDiv>
           <InputDiv>
-            <i class="val password" />
+            <i className="val password" />
             <Input value={ this.state.password } onChange={ this.setPassword } type="password" placeholder="Password" required />
           </InputDiv>
           <InputDiv>
-            <i class="val repeat-password" />
+            <i className="val repeat-password" />
             <Input value={ this.state.password_repeat } onChange={ this.setPassword2 } type="password" placeholder="Password repeat" required />
           </InputDiv>
           
-          </this.Form>
+          </Form>
           <CompleteButton />
           <ThreeDotsContainer>
                     <Link to='/sign-up/email'>
