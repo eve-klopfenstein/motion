@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
-import Congratulations from "./components/Home/Congratulations";
-import Feed from './components/Feed'
+import Congratulations from "./components/Home/congratulations";
+import Verification from "./components/Home/verification";
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
@@ -17,6 +17,18 @@ const initialState = {
   id: ''
 };
 
+const reducer1 = (state = initialState, action) => {
+        switch(action.type) {
+      case 'ADD_EMAIL' : 
+      return {...state, email: action.payload};
+      break;
+      default: 
+          return state;
+          break
+    }
+ 
+  
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -46,10 +58,8 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={ SignIn } />
       <Route exact path="/sign-up/email" component={ SignUp } />
-      <Route exact path="/sign-up/congratulations" component={ Congratulations } />
-      {/* <Route exact path="/sign-up/verification/" component={ Verification }/>     */}
-      <Route exact path="/feed" component={ Feed } />  
-      {/* don't forget to change to /feed/:id */}
+      <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
+      <Route exact path="/sign-up/verification/" component={ Verification } />
     </Switch>
   </Router>
 </Provider>,
@@ -57,5 +67,3 @@ ReactDOM.render(
 );
 
 reportWebVitals();
-{/*  */}
-{/*  */}

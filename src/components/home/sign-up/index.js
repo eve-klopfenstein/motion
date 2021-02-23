@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { HomeContainer, RightSide, UpperSection, UpperSectionLabel } from '../../../style/layout';
-import {LeftSideHome} from '../left-side';
+import {useState} from 'react'
+import styled from 'styled-components'
 import SignInLink from "./SignInLink";
 import SignUpBody from './SignUpBody';
 
