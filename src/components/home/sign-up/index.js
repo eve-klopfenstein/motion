@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import './style.css';
+import React from 'react';
+import styled from 'styled-components'
+import SignInLink from "./SignInLink";
+import SignUpBody from "./SignUpBody";
+import SignUpContinue from "./SignUpContinue"
 
 const SignUp = (props) => {
     const [email, setEmail] = useState('');
@@ -29,7 +32,7 @@ const SignUp = (props) => {
         });
     }
 
-   
+
     return (
         <>  
             <form className="sign-up" >
@@ -57,4 +60,6 @@ const mapStateToProps = () => {
     };
 }
 
-export default connect(mapStateToProps)(SignUp);
+const connection = connect(mapStateToProps);
+const ConnectedApp = connection(SignUp);
+export default ConnectedApp;
