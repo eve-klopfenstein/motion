@@ -132,11 +132,8 @@ class Verification extends Component {
             <i className="val repeat-password" />
             <Input value={ this.state.password_repeat } onChange={ this.setPassword2 } type="password" placeholder="Password repeat" required />
           </InputDiv>
-            <div style={{display: "flex",
-          justifyContent: "center",alignItems: "flex-start",
-          gridArea:"button", width:"650px"}}>
+            <div style={{display: "flex",justifyContent: "center",alignItems: "flex-start",gridArea:"button", width:"650px"}}>
           <CompleteButton />
-          
             </div>
             <div style={{display: "flex",justifyContent: "center",gridArea:"button2", width:"650px"}}> <ThreeDotsContainer  >
                     <Link to='/sign-up/email'>

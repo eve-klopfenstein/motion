@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
-import Congratulations from "./components/Home/congratulations";
+import Congratulations from "./components/Home/Congratulations";
 import Verification from "./components/Home/verification";
+import Feed from "./components/Feed"
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
@@ -42,12 +43,12 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={ SignIn } />
-      <Route exact path="/sign-up/email" component={ SignUp } />
+      <Route exact path="/sign-up/email/" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
       <Route exact path="/sign-up/verification/" component={ Verification } />
     </Switch>
   </Router>
 </Provider>,
-  document.getElementById('root')
+document.getElementById('root')
 );
 reportWebVitals();
