@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import SignUpLink from "./SignUpLink";
 import SignInBody from "./SignInBody";
-import { RightSide, HomeContainer } from "../../../style/layout.js";
+import { RightSide, HomeContainer, } from "../../../style/layout.js";
 import { LeftSideHome } from "../left-side"
 
 export const SignIn = () => {
@@ -18,7 +18,7 @@ export const SignIn = () => {
 }
 
 const mapStateToProps = state => {
-
+  return {};
 };
 
 const connection = connect(mapStateToProps);

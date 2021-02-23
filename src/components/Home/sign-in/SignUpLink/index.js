@@ -19,7 +19,7 @@ const SignUpLink = () => {
 }
 
 const mapStateToProps = state => {
-
+  return {};
 };
 
 const connection = connect(mapStateToProps);
