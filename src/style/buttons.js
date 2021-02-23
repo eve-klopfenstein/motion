@@ -42,3 +42,22 @@ export const BigButton = styled.button`
         cursor: pointer;
     }
 `
+
+export const ThreeDotsContainer = styled.div`
+    margin-top: 40px;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+`
+
+export const SmallDotTransparent = styled.div`
+    width: 8px;
+    height: 8px;
+    border: 0.5px solid #c568ff;
+    border-radius: 50%;
+`
+
+export const SmallDotBlack = styled(SmallDotTransparent)`
+    border: 0.5px solid black;
+    background: black;
+`

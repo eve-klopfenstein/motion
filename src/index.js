@@ -56,6 +56,7 @@ ReactDOM.render(
       <Route exact path="/" component={ SignIn } />
       <Route exact path="/sign-up/email" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
+      {/* <Route exact path="/sign-up/verification/" component={ Verification }/>     */}
     </Switch>
   </Router>
 </Provider>,

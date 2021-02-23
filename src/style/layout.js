@@ -40,8 +40,8 @@ export const H1 = styled.h1`
 
 //Right-side Congratulations
 export const CongratulationsIcon = styled(CheckCircle)`
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     color: #c568ff;
 `;
 
