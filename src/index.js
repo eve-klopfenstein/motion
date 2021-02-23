@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
-import Congratulations from "./components/Home/congratulations";
+import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
-  token: ''
+  token: '',
+  email: 'david@ssdf.com'
 };
 
 const reducer = (state = initialState, action) => {
