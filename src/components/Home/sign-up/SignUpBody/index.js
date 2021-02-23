@@ -1,39 +1,65 @@
 import { connect } from 'react-redux';
+import { H1, MiddleSection } from '../../../../style/layout';
+import { Input, InputDiv } from '../../../../style/inputs.js';
+import ContinueButton from "../ContinueButton";
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import SignUpContinue from "../SignUpContinue";
+import { withRouter } from "react-router-dom";
 
-const SignUpBody = (props) => {
-  const [email, setEmail] = useState('');
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
 
-  const continueHandler = (event) => {
-    event.preventDefault();
-  } 
+const SignUnBody = (props) => {
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    props.dispatch({type: "ADD_EMAIL", payload: email})
-  } 
+    const [email, setEmail] = useState('');
+    
+    const register = e => {
+        console.log(e);
+        e.preventDefault();
+        console.log(email);
+        const url = "https://motion.propulsion-home.ch/backend/api/auth/registration/";
+        const method = 'POST';
+        const body = {
+           email: email
+        };
+        const headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+        const config = {
+            method: method,
+            headers: headers,
+            body: JSON.stringify(body)
+        };
+        fetch(url, config)
+        .then(res => res.status ? res.json() : console.log('login response not ok'))
+        .then(data => {
+            props.dispatch({type: 'ADD_EMAIL', payload: email});
+            props.history.push("/sign-up/congratulations/");
+        });
+    }
 
     return (
-        <div>
-          <h1>Sign Up</h1>
-          <form onSubmit={submitHandler}>
-            <label>E-mail<input type="email" placeholder="E-mail" value={email} />
-            </label>
-              <SignUpContinue />
-          </form>
-        </div>
-    )       
+        <MiddleSection>
+          <H1>Sign Up</H1>
+          <Form onSubmit={ register }>
+            <InputDiv>
+              <i className="fas fa-envelope" />
+              <Input type="email" placeholder="   Email" value={ email } onChange={ event => setEmail(event.target.value) } required />
+            </InputDiv>
+            <ContinueButton />
+          </Form>
+       </MiddleSection>
+    )
 }
 
-const mapStateToProps = state => {
-  return {state}
-};
+const mapStateToProps = () => {
+    return {
+        
+    };
+}
 
 const connection = connect(mapStateToProps);
-const ConnectedApp = connection(SignUpBody);
-export default ConnectedApp;
-
-//
+const ConnectedApp = connection(SignUnBody);
+export default withRouter(ConnectedApp);

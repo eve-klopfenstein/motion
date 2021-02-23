@@ -19,7 +19,7 @@ export const UpperSection = styled.div`
 export const UpperSectionDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    height: 100%auto;
+    height: 100%;
     width: 300px;
     margin-top: 10px;
     margin-right: 20px;
@@ -38,7 +38,7 @@ export const H1 = styled.h1`
     margin-top: 100px;
 `
 
-//Right-side Congratulations
+// Right-side Congratulations
 export const CongratulationsIcon = styled(CheckCircle)`
     width: 150px;
     height: 150px;
