@@ -16,9 +16,7 @@ const SignUnBody = (props) => {
     const [email, setEmail] = useState('');
     
     const register = e => {
-        console.log(e);
         e.preventDefault();
-        console.log(email);
         const url = "https://motion.propulsion-home.ch/backend/api/auth/registration/";
         const method = 'POST';
         const body = {
@@ -33,10 +31,14 @@ const SignUnBody = (props) => {
             body: JSON.stringify(body)
         };
         fetch(url, config)
-        .then(res => res.status ? res.json() : console.log('login response not ok'))
-        .then(data => {
-            props.dispatch({type: 'ADD_EMAIL', payload: email});
-            props.history.push("/sign-up/congratulations/");
+        .then(res => res.status)
+        .then(status => {
+            if (status === 200){
+                props.dispatch({type: 'ADD_EMAIL', payload: email});
+                props.history.push("/sign-up/congratulations/");
+            } else {
+                console.log("response not ok");
+            }
         });
     }
 
@@ -45,7 +47,7 @@ const SignUnBody = (props) => {
           <H1>Sign Up</H1>
           <Form onSubmit={ register }>
             <InputDiv>
-              <i className="fas fa-envelope" />
+              <i className="fas fa-envelope input-i" />
               <Input type="email" placeholder="   Email" value={ email } onChange={ event => setEmail(event.target.value) } required />
             </InputDiv>
             <ContinueButton />

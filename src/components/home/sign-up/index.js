@@ -1,12 +1,12 @@
 import React from 'react';
-import {useState} from 'react'
-import styled from 'styled-components'
+import { connect } from 'react-redux';
 import SignInLink from "./SignInLink";
 import SignUpBody from './SignUpBody';
+import { HomeContainer, RightSide } from '../../../style/layout.js';
+import LeftSideHome from '../left-side';
 
 const SignUp = (props) => {
     return (
-        <>
         <HomeContainer>
           <LeftSideHome />
           <RightSide>
@@ -14,7 +14,6 @@ const SignUp = (props) => {
           <SignUpBody />
           </RightSide>
         </HomeContainer>
-        </>
     )
 }
 

@@ -14,3 +14,7 @@ export const LeftNavBarDiv = styled.div`
 export const RightNavBarDiv = styled(LeftNavBarDiv)`
 
 `
+//Search Bar
+export const LeftSearchDiv = styled.div`
+    margin-left: 5%;
+`
