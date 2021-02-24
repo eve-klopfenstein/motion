@@ -4,7 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Verification from "./components/Home/verification";
-import Congratulations from "./components/Home/Congratulations";
+import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import { createStore, applyMiddleware } from "redux";
@@ -20,7 +20,8 @@ const initialState = {
   id: '',
   first_name: '',
   last_name: '',
-  user_name: ''
+  user_name: '',
+  users: [],
 };
 
 
@@ -45,6 +46,9 @@ const reducer = (state = initialState, action) => {
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
       break;
+    case 'GET_USERS':
+      return {...state, users: action.payload};
+      break;
     default:
       return state;
       break;
@@ -52,6 +56,13 @@ const reducer = (state = initialState, action) => {
 }
 
 const store = createStore(reducer, applyMiddleware(thunk));
+
+const token = localStorage.getItem("token");
+console.log(token)
+if (token) {
+  store.dispatch({ type: "SET_TOKEN", payload: token });
+}
+
 
 ReactDOM.render(
 <Provider store={ store } >
