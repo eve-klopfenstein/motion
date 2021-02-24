@@ -2,7 +2,7 @@ import { BigPostsBodyContainer, SmallPostsBodyContainer } from '../../../style-f
 import PostStatus from './post-status/index.js';
 import { useSelector } from 'react-redux';
 
-const PostsBody = () => {
+const PostsBody = (props) => {
 
     const token = useSelector( state => state.token );
     console.log(token);
@@ -24,10 +24,7 @@ const PostsBody = () => {
     return (
         <BigPostsBodyContainer>
             <SmallPostsBodyContainer>
-                <PostStatus />
-                <PostStatus />
-                <PostStatus />
-
+                <PostStatus showPopUp={ props.showPopUp } setshowPopUp={ props.setshowPopUp } />
             </SmallPostsBodyContainer>
         </BigPostsBodyContainer>
     )

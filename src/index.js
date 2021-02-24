@@ -4,7 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Verification from "./components/Home/verification";
-import Congratulations from "./components/Home/Congratulations";
+import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import { createStore } from "redux";
@@ -18,7 +18,8 @@ const initialState = {
   id: '',
   first_name: '',
   last_name: '',
-  user_name: ''
+  user_name: '',
+  newPost: ''
 };
 
 
@@ -28,7 +29,6 @@ const reducer = (state = initialState, action) => {
       return {...state, token: action.payload};
       break;
     case 'ADD_EMAIL':
-      console.log(action.payload);
       return {...state, email: action.payload};
       break;
     case 'ADD_ID':
@@ -42,6 +42,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
+      break;
+    case 'NEW_POST':
+      return {...state, newPost: action.payload};
       break;
     default:
       return state;
