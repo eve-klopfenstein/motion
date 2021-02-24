@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { getAllPosts } from '../../../store/actions/getAllPosts.js';
 import { SinglePost } from './single-post'
 
-const PostsBody = () => {
+const PostsBody = (props) => {
 
     const [ posts, setPosts ] = useState([]);
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const PostsBody = () => {
     return (
         <BigPostsBodyContainer>
             <SmallPostsBodyContainer>
-                <PostStatus />
+                <PostStatus showPopUp={ props.showPopUp } setshowPopUp={ props.setshowPopUp } />
                 
                 { posts.map( (post, index) => <SinglePost 
                 key={index} 

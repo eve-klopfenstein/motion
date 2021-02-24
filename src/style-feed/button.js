@@ -11,3 +11,15 @@ export const SendButton = styled.button`
         height: 16px;
     }
 `
+export const CloseButton = styled.button`
+    margin-top: 100px;
+    margin-left: 370px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+`
+export const PopupButton = styled.button`
+    background-color: transparent;
+    border: none;
+`

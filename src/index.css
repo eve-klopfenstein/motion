@@ -1,6 +1,6 @@
-* {
-  /* border: solid pink; */
-}
+/* * {
+  border: solid pink;
+} */
 
 body {
   margin: 0;
@@ -12,6 +12,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .input-i {

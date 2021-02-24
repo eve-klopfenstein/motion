@@ -21,7 +21,8 @@ const initialState = {
   first_name: '',
   last_name: '',
   user_name: '',
-  users: [],
+  newPost: '',
+  users: []
 };
 
 
@@ -31,7 +32,6 @@ const reducer = (state = initialState, action) => {
       return {...state, token: action.payload};
       break;
     case 'ADD_EMAIL':
-      console.log(action.payload);
       return {...state, email: action.payload};
       break;
     case 'ADD_ID':
@@ -45,6 +45,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
+      break;
+    case 'NEW_POST':
+      return {...state, newPost: action.payload};
       break;
     case 'GET_USERS':
       return {...state, users: action.payload};
