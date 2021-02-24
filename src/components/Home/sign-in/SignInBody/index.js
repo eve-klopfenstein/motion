@@ -50,9 +50,9 @@ class SignInBody extends Component {
       .then(res => res.status ? res.json() : console.log('login response not ok'))
       .then(data => {
           console.log(data);
-          const token = data.access;
-          const id = data.user.id;
           if (data.access){
+            const token = data.access;
+            const id = data.user.id;
             localStorage.setItem('token', token);
             this.props.dispatch({type: 'SET_TOKEN', payload: token});
             this.props.dispatch({type: 'ADD_ID', payload: id});
