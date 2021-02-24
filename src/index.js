@@ -18,7 +18,8 @@ const initialState = {
   id: '',
   first_name: '',
   last_name: '',
-  user_name: ''
+  user_name: '',
+  users: [],
 };
 
 
@@ -43,6 +44,9 @@ const reducer = (state = initialState, action) => {
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
       break;
+    case 'GET_USERS':
+      return {...state, users: action.payload};
+      break;
     default:
       return state;
       break;
@@ -50,6 +54,13 @@ const reducer = (state = initialState, action) => {
 }
 
 const store = createStore(reducer);
+
+const token = localStorage.getItem("token");
+console.log(token)
+if (token) {
+  store.dispatch({ type: "SET_TOKEN", payload: token });
+}
+
 
 ReactDOM.render(
 <Provider store={ store } >
