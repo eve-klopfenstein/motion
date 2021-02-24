@@ -1,5 +1,6 @@
 import { NavBar } from './nav-bar';
 import SearchBar from './SearchBar'
+import PostsBody from './posts/'
 
 const Feed = () => {
 
@@ -7,6 +8,7 @@ const Feed = () => {
         <>
             <NavBar />
             <SearchBar />
+            <PostsBody />
         </>
     )
 }
