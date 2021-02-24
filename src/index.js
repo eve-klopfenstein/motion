@@ -8,7 +8,6 @@ import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
-import {combineReducers } from 'redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {

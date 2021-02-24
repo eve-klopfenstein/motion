@@ -59,3 +59,8 @@ export const SearchBarContainer = styled.div`
 export const LeftSearchDiv = styled.div`
     margin-left: 8%;
 `
+export const RightSearchDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-right: 8%;
+`
