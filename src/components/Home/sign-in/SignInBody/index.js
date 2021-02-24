@@ -52,9 +52,13 @@ class SignInBody extends Component {
           console.log(data);
           const token = data.access;
           const id = data.user.id;
-          this.props.dispatch({type: 'SET_TOKEN', payload: token});
-          this.props.dispatch({type: 'ADD_ID', payload: id});
           if (data.access){
+            localStorage.setItem('token', token);
+            this.props.dispatch({type: 'SET_TOKEN', payload: token});
+            this.props.dispatch({type: 'ADD_ID', payload: id});
+            this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
+            this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
+            this.props.dispatch({type: 'ADD_USERNAME', payload: data.user.username})
             this.props.history.push(`/feed/${data.user.id}`);
           } else {
             this.props.history.push("/");

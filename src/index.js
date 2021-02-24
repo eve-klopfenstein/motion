@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
+import Verification from "./components/Home/verification";
 import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
-import {combineReducers } from 'redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const initialState = {
@@ -48,9 +48,7 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-
 const store = createStore(reducer);
-
 
 ReactDOM.render(
 <Provider store={ store } >
@@ -59,7 +57,7 @@ ReactDOM.render(
       <Route exact path="/" component={ SignIn } />
       <Route exact path="/sign-up/email/" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
-      {/* <Route exact path="/sign-up/verification/" component={ Verification }/>     */}
+      <Route exact path="/sign-up/verification/" component={ Verification }/>     
       <Route exact path="/feed/:id" component={ Feed } />
     </Switch>
   </Router>
