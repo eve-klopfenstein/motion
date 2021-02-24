@@ -103,7 +103,7 @@ class Verification extends Component {
             this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
             this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
             this.props.dispatch({type: 'ADD_USER_NAME', payload: data.user.username});
-            this.props.history.push(`/feed/${data.user.id}`);
+            this.props.history.push('/');
         }else{
          console.log('validation response not ok')};
   });
