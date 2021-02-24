@@ -3,6 +3,7 @@ import { UpperRightButtons, ClickedUpperRightButtons } from '../../../../style-f
 import React, { useState } from 'react';
 
 const RightSearchBar = () => {
+
     return (
         <RightSearchDiv>
             <ClickedUpperRightButtons>Liked</ClickedUpperRightButtons>
