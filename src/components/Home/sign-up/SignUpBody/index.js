@@ -58,7 +58,6 @@ const SignUnBody = (props) => {
 
 const mapStateToProps = () => {
     return {
-        
     };
 }
 
