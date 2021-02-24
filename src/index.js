@@ -7,10 +7,12 @@ import Verification from "./components/Home/verification";
 import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FindFriends from './components/Feed/FindFriends';
+import thunk from 'redux-thunk';
+
 
 const initialState = {
   token: '',
@@ -19,7 +21,8 @@ const initialState = {
   first_name: '',
   last_name: '',
   user_name: '',
-  newPost: ''
+  newPost: '',
+  users: []
 };
 
 
@@ -46,13 +49,23 @@ const reducer = (state = initialState, action) => {
     case 'NEW_POST':
       return {...state, newPost: action.payload};
       break;
+    case 'GET_USERS':
+      return {...state, users: action.payload};
+      break;
     default:
       return state;
       break;
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
+
+const token = localStorage.getItem("token");
+console.log(token)
+if (token) {
+  store.dispatch({ type: "SET_TOKEN", payload: token });
+}
+
 
 ReactDOM.render(
 <Provider store={ store } >
