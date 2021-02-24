@@ -29,3 +29,38 @@ export const PostStatusContainer = styled.div`
     }
 `
 
+//Single post
+export const PostDiv = styled.div`
+    width: 45%;
+    height: auto;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+`
+
+export const TopPartPost = styled.div`
+    width: 100%;
+    height: 15%;
+    display: flex;
+    img {
+
+    }
+`
+export const ContentPart = styled.div`
+    width: 100%;
+`
+
+export const ImagePart = styled.div`
+    width: 80%;
+    img {
+        width: 200px;
+    }
+`
+
+export const LikeSharePart = styled.div`
+    width: 100%;
+    display: flex;
+`
