@@ -1,6 +1,6 @@
-/* * {
+* {
   border: solid pink;
-} */
+}
 
 body {
   margin: 0;
@@ -14,8 +14,12 @@ code {
     monospace;
 }
 
-i {
+.input-i {
   border-bottom: 1px solid gray;
   height: 28px;
   margin-top: 4px;
+}
+
+.search-i {
+  margin-right: 10px;
 }

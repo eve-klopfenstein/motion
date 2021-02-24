@@ -1,12 +1,13 @@
-import { NavBar } from '../Feed/nav-bar'
-import PostsBody from './posts'
+import { NavBar } from './nav-bar';
+import SearchBar from './SearchBar'
+import PostsBody from './posts/'
 
 const Feed = () => {
 
     return (
         <>
             <NavBar />
-            {/* SearchBarY */}
+            <SearchBar />
             <PostsBody />
         </>
     )

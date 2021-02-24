@@ -47,7 +47,16 @@ export const RightNavBarDiv = styled(LeftNavBarDiv)`
     }
 `
 
-//Posts Body
-export const PostStatusContainer = styled.div`
+//Search Bar
+export const SearchBarContainer = styled.div`
     width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(235, 231, 231);
+    border-bottom: 3px solid rgba(49, 49, 49, 0.479);
+`
+export const LeftSearchDiv = styled.div`
+    margin-left: 8%;
 `
