@@ -7,10 +7,12 @@ import Verification from "./components/Home/verification";
 import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import FindFriends from './components/Feed/FindFriends';
+import thunk from 'redux-thunk';
+
 
 const initialState = {
   token: '',
@@ -49,7 +51,7 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 <Provider store={ store } >
