@@ -46,6 +46,7 @@ export const RightNavBarDiv = styled(LeftNavBarDiv)`
         height: 55%;
     }
 `
+
 //Search Bar
 export const SearchBarContainer = styled.div`
     width: 100%;
