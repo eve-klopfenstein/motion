@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import CompleteButton from "./CompleteButton";
 import { withRouter } from "react-router-dom";
-import { MiddleSection, H1 }from "../../../style/layout.js";
+import { MiddleSection, H1, HomeContainer, RightSide }from "../../../style/layout.js";
 import { Input, InputDiv, }from "../../../style/inputs.js";
-import { BigButton, ThreeDotsContainer, SmallDotTransparent, SmallDotBlack } from '../../../style/buttons';
-import { Link } from 'react-router-dom'; 
+import { ThreeDotsContainer, SmallDotTransparent, SmallDotBlack } from '../../../style/buttons';
+import { Link } from 'react-router-dom';
+import { LeftSideHome } from '../left-side';
 
 const Form = styled.form`
 display: grid;
@@ -98,15 +99,20 @@ class Verification extends Component {
       .then(res => res.json())
       .then(data => { 
           if(data.user){ 
+            this.props.dispatch({type: 'ADD_ID', payload: data.user.id});
             this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
             this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
             this.props.dispatch({type: 'ADD_USER_NAME', payload: data.user.username});
+            this.props.history.push('/');
         }else{
          console.log('validation response not ok')};
   });
 }
   render(){
     return (
+      <HomeContainer>
+      <LeftSideHome />
+      <RightSide>
       <MiddleSection >
         <H1>Verification</H1>
         <Form onSubmit={ this.verification } >
@@ -144,14 +150,18 @@ class Verification extends Component {
           <CompleteButton />
             </div>
             <div style={{display: "flex",justifyContent: "center",gridArea:"button2", width:"650px"}}> <ThreeDotsContainer  >
-                    <Link to='/sign-up/email'>
+                    <Link to='/sign-up/email/'>
                         <SmallDotTransparent />
                     </Link>
-                    <SmallDotTransparent />
+                    <Link to="/sign-up/congratulations/">
+                      <SmallDotTransparent />
+                    </Link>
                     <SmallDotBlack />
                 </ThreeDotsContainer></div>
           </Form>
       </MiddleSection>
+      </RightSide>
+      </HomeContainer>
     )
   }
 }

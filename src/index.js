@@ -10,6 +10,7 @@ import Feed from './components/Feed';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import FindFriends from './components/Feed/FindFriends';
 
 const initialState = {
   token: '',
@@ -58,7 +59,8 @@ ReactDOM.render(
       <Route exact path="/sign-up/email/" component={ SignUp } />
       <Route exact path="/sign-up/congratulations/" component={ Congratulations } />
       <Route exact path="/sign-up/verification/" component={ Verification }/>     
-      <Route exact path="/feed/:id" component={ Feed } />
+      <Route exact path="/feed/:id/" component={ Feed } />
+      <Route exact path="/feed/:id/find-friends/" component={ FindFriends } />
     </Switch>
   </Router>
 </Provider>,
