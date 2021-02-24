@@ -97,7 +97,7 @@ class Verification extends Component {
       };
       fetch(url, config)
       .then(res => res.json())
-      .then(data => { 
+      .then(data => {
           if(data.user){ 
             this.props.dispatch({type: 'ADD_ID', payload: data.user.id});
             this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
