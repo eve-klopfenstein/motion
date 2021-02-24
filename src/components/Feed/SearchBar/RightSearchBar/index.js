@@ -1,9 +1,14 @@
-
+import { RightSearchDiv } from '../../../../style-feed/Nav/layout.js';
+import { UpperRightButtons, ClickedUpperRightButtons } from '../../../../style-feed/Buttons/buttons.js';
+import React, { useState } from 'react';
 
 const RightSearchBar = () => {
     return (
-        <div>
-        </div>
+        <RightSearchDiv>
+            <ClickedUpperRightButtons>Liked</ClickedUpperRightButtons>
+            <UpperRightButtons>Friends</UpperRightButtons>
+            <UpperRightButtons>Follow</UpperRightButtons>
+        </RightSearchDiv>
     )
 }
 
