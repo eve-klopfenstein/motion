@@ -45,6 +45,7 @@ class FindFriendsCard extends React.Component {
         };
         fetch(url,config)
             .then(res => {
+                console.log(res.status)
                 if(res.status===200){
                 this.fetch()
                 }
@@ -79,9 +80,11 @@ class FindFriendsCard extends React.Component {
                                 <CardImg src={user.avatar}/>
                                 <NameUser>{user.first_name} {user.last_name}</NameUser>
                                 <CityUser>{user.location} </CityUser>
+                               
                                 <CityUser><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{user.about_me}</p></CityUser>
                                 {user.logged_in_user_is_following? <FollowingButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOWING</FollowingButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOW</TransparentButton>}                      
                                 {user.logged_in_user_is_friends? <TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}>FRIEND</TransparentButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}>ADD FRIEND</TransparentButton>}
+                                
                                 {user.things_user_likes.map((things)=><ThingsUserLikesDiv>{things}</ThingsUserLikesDiv>)}
                             </CardContainer>
                         ):"loading"}
