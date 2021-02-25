@@ -2,8 +2,10 @@ import jenniferImg from '../../../../assets/images/users/jennifer.png';
 import sendIcon from '../../../../assets/images/send_button.png';
 import { SendButton } from '../../../../style-feed/button';
 import { PostStatusContainer } from '../../../../style-feed/Posts/layout';
+import { Avatar } from '../../../../style-feed/avatar'
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useState } from 'react';
+import tuna from '../../../../assets/images/tuna.jpg'
 
 const PostStatus = (props) => {
     const dispatch = useDispatch()
@@ -17,7 +19,7 @@ const PostStatus = (props) => {
     return (
         <>
         <PostStatusContainer>
-            <img src={jenniferImg} />
+            <Avatar src={props.avatar ? props.avatar : tuna } />
             <input value={post} onChange={ e => setPost(e.target.value) } placeholder={ firstName ? `What's on your mind, ${firstName}?` : "What's on your mind ?"} />
             <SendButton onClick={ addPost }>
                 <img src={sendIcon} alt='Send Icon' />

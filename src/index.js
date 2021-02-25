@@ -4,7 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Verification from "./components/Home/verification";
-import Congratulations from "./components/Home/congratulations";
+import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import ProfilePage from './components/Feed/Profile';
@@ -25,7 +25,6 @@ const initialState = {
   newPost: '',
   users: []
 };
-
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

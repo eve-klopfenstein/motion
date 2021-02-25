@@ -60,6 +60,7 @@ export const PostSendContainer = styled.div`
 export const PostSendContainerDiv = styled.div`
     margin-left: 10px;
 `
+
 export const BigPostsBodyContainer = styled.div`
     background-color: #EBE7E7;
     min-height: 80vh;
@@ -68,20 +69,30 @@ export const BigPostsBodyContainer = styled.div`
 `
 
 export const SmallPostsBodyContainer = styled.div`
-    width: 70%;
-    display: flex;
+    width: 75%;
+    padding: 10px;
+    column-count: 2;
+    column-gap: 1em;
+    /* display: grid;
+    grid-template-columns: repeat(2, minmax(250px,1fr));
+    grid-auto-rows: 200px; */
+    /* grid-template-rows: minmax(100px, auto); */ 
+
+    /* display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 `
 
 //Posts status update
 export const PostStatusContainer = styled.div`
-    width: 45%;
-    margin: 10px;
+
+    height: 5rem;
+    margin: 1.5em; 
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    box-shadow: 5px 5px 5px lightgray, -5px -5px 5px lightgray;
     input {
         width: 50%;
         height: 30%;
@@ -90,37 +101,85 @@ export const PostStatusContainer = styled.div`
 `
 
 //Single post
+
 export const PostDiv = styled.div`
-    width: 45%;
-    height: auto;
-    margin: 10px;
+
+    margin: 1.5em;
     background-color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
+    box-shadow: 5px 5px 5px lightgray, -5px -5px 5px lightgray;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 `
 
+//Single post -Top
 export const TopPartPost = styled.div`
     width: 100%;
-    height: 15%;
+    max-height: 80px;
     display: flex;
-    img {
-
-    }
+    align-items: center;
 `
+
+export const UserTimeWrapper = styled.div`
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+export const NameDiv = styled.div`
+    height: 1rem;
+    font-weight: bold;
+`
+
+export const TimeDiv = styled.div`
+    font-weight: normal;
+    color: gray;
+`
+
+//Single post -Content
 export const ContentPart = styled.div`
     width: 100%;
+    min-height: 4rem;
+    p {
+        margin: 0.5rem 1.5rem;
+    }
 `
-
+//Sing post -Images
 export const ImagePart = styled.div`
-    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 90%;
     img {
-        width: 200px;
+        max-width: 40%;
+        margin: 5px;
     }
 `
 
+//Single post -Like and Share 
 export const LikeSharePart = styled.div`
-    width: 100%;
+    width: 90%;
+    height: 40px;
     display: flex;
+    justify-content: space-between;
 `
+export const SubLikeShare = styled(LikeSharePart)`
+    width: 50%;
+    div {
+        display: flex;
+        align-items: center;
+        button {
+            background-color: white;
+            border: none;
+        }
+    }
+`
+export const LikesAmountP = styled.p`
+    white-space: nowrap;
+`
+
