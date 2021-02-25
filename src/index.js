@@ -4,7 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Verification from "./components/Home/verification";
-import Congratulations from "./components/Home/congratulations";
+import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import ProfilePage from './components/Feed/Profile';
@@ -22,6 +22,7 @@ const initialState = {
   first_name: '',
   last_name: '',
   user_name: '',
+  avatar: '',
   newPost: '',
   users: []
 };
@@ -45,6 +46,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
+      break;
+    case 'ADD_AVATAR':
+      return {...state, avatar: action.payload};
       break;
     case 'NEW_POST':
       return {...state, newPost: action.payload};
