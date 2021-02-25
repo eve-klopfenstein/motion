@@ -37,7 +37,7 @@ export const ProfileDetailsLeft = styled.article`
         margin-bottom: 3px;
         margin-top: 10px;
     }
-    spam {
+    span {
         font-size: 0.7rem;
         padding: 0;
     }

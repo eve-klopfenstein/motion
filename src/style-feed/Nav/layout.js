@@ -31,6 +31,7 @@ export const PostsDiv = styled(LogoDiv)`
     width: 15%;
     justify-content: space-around;
     padding-bottom: 10px;
+    color: black;
     :hover{
         border-bottom: 2px solid #c568ff;
     }
