@@ -35,6 +35,7 @@ const PostsBody = (props) => {
                     time={post.created} 
                     images={post.images} 
                     avatar= {post.user.avatar}
+                    postID={post.id}
                     /> 
                 )}
                 
