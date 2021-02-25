@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { SuitHeartFill } from '@styled-icons/bootstrap/SuitHeartFill';
+import { StyledComponents } from 'styled-icons/simple-icons';
+import { Share } from '@styled-icons/boxicons-solid/Share';
 
 export const SendButton = styled.button`
     width: 40px;
@@ -22,4 +25,24 @@ export const CloseButton = styled.button`
 export const PopupButton = styled.button`
     background-color: transparent;
     border: none;
+`
+
+export const LikeIcon = styled(SuitHeartFill)`
+    width: 20px;
+    color: lightgray;
+    :hover {
+        color: purple;
+    }
+`
+
+export const LikeIconClicked = styled(LikeIcon)`
+    color: purple;
+`
+
+export const ShareIcon = styled(Share)`
+    width: 25px;
+    color: lightgray;
+    :hover {
+        color: purple;
+    }
 `
