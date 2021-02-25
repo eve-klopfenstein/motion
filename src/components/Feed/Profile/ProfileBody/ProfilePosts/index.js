@@ -1,35 +1,25 @@
 import { ProfilePostsContainer } from '../../../../../style-feed/Profile/layout.js';
-import { useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getSelfPosts } from '../../../../../store/actions/getAllPosts.js';
 
 const ProfilePosts = () => {
+    const [posts, setPosts] = useState([]);
+    const dispatch = useDispatch();
+
     useEffect( () => {
-        const getPostsFunc = (newPost) => {
-            const token = localStorage.getItem('token');
-            const url = "https://motion.propulsion-home.ch/backend/api/social/posts/me/";
-            const method = 'GET';
-            const headers = new Headers({
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
-            });
-            const config = {
-                method: method,
-                headers: headers
-            };
-            fetch(url, config)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
-          }
+        const getPostsFunc = async () => {
+            const allPosts = await dispatch( getSelfPosts());
+            setPosts(allPosts);
+        }
         getPostsFunc();
     }, [])
 
-
-
     return (
         <ProfilePostsContainer>
-
+            {posts.map((post, index) => {
+                return <h2 key={index}>{post.content}hello</h2>
+            })}
         </ProfilePostsContainer>
     )
 }

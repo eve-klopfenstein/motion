@@ -31,3 +31,7 @@ button:hover {
 .search-i {
   margin-right: 10px;
 }
+
+.no-line {
+  text-decoration: none;
+}
