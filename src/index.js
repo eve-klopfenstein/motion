@@ -7,6 +7,7 @@ import Verification from "./components/Home/verification";
 import Congratulations from "./components/Home/Congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
+import ProfilePage from './components/Feed/Profile';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -76,6 +77,7 @@ ReactDOM.render(
       <Route exact path="/sign-up/verification/" component={ Verification }/>     
       <Route exact path="/feed/:id/" component={ Feed } />
       <Route exact path="/feed/:id/find-friends/" component={ FindFriends } />
+      <Route exact path="/feed/:id/profile" component={ ProfilePage } />
     </Switch>
   </Router>
 </Provider>,
