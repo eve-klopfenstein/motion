@@ -7,6 +7,7 @@ export const NavBarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
 `
 export const LeftNavBarDiv = styled.div`
     width: 40%;

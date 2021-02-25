@@ -13,7 +13,7 @@ const Feed = () => {
         <FeedComtainer>
             { showPopUp ? <PopUpContainer>
               <CloseButton onClick={ () => setshowPopUp(false) } >x</CloseButton>
-              <NewPostPopup />
+              <NewPostPopup showPopUp={ showPopUp } setshowPopUp={ setshowPopUp } />
             </PopUpContainer> : null}
             <NavBar />
             <SearchBar />

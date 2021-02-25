@@ -17,3 +17,24 @@ export const getAllPosts = () => {
     return posts
     }
 }
+
+export const sendPostFunc = (newPost) => {
+    const token = localStorage.getItem('token');
+    const url = "https://motion.propulsion-home.ch/backend/api/social/posts/";
+    const method = 'POST';
+    const body = {
+        content: newPost
+    };
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    const config = {
+        method: method,
+        headers: headers,
+        body: JSON.stringify(body)
+    };
+    fetch(url, config)
+    .then(res => res)
+    .then(data => console.log(data))
+  }
