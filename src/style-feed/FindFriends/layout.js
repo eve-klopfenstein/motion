@@ -48,6 +48,9 @@ export const FollowingButton = styled.button`
     height: 1.5rem;
     color: white;
     font-size:9px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
       :hover {
         cursor: pointer;
     }
@@ -60,6 +63,9 @@ export const TransparentButton = styled.button`
     border: 1px solid black;
     border-radius: 10rem;
     font-size:9px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
     :hover {
         cursor: pointer;
     }
@@ -90,4 +96,17 @@ export const CityUser = styled.div`
     text-align:center;
     line-height: 1.5em;
 `;
+
+export const InlineDiv= styled.div`
+    display: flex;
+    justify-content:center;
+    `;
+
+export const SpaceDiv= styled.div`
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    padding:20px;
+    width: 200px;
+ `;
 
