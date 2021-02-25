@@ -8,7 +8,6 @@ const FindFriends = () => {
     return (
         <>
         <NavBar /> 
-        <SearchBar />
         <FindFriendsSearch />
         </>
     )
