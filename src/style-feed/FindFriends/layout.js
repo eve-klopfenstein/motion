@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     background-color: #EBE7E7;
-    height: 2000vh;
+    height: 4000vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ export const CardContainer = styled.div`
     align-items: center;
     background-color: white;
     margin: 20px;
-   // border: 3px solid red;
+   //npm  border: 3px solid red;
 `
 
 export const CardImg = styled.img`
@@ -44,9 +44,10 @@ export const FollowingButton = styled.button`
      background-image: linear-gradient(115deg, #c568ff 0%, #6e91f6);
     border: none;
     border-radius: 10rem;
-    width: 5rem;
-    height: 2rem;
+    width: 6rem;
+    height: 1.5rem;
     color: white;
+    font-size:9px;
       :hover {
         cursor: pointer;
     }
@@ -54,20 +55,39 @@ export const FollowingButton = styled.button`
 
 export const TransparentButton = styled.button`
     background-color: transparent;
-    height: 2rem;
-    width: 5rem;
+    height: 1.5rem;
+    width: 6rem;
     border: 1px solid black;
     border-radius: 10rem;
-    
+    font-size:9px;
     :hover {
         cursor: pointer;
     }
 `;
 
-export const ThingsUserLikesButton = styled.div`
+export const ThingsUserLikesDiv = styled.div`
     background-color: #EBE7E7;
-    height: 2rem;
-    width: 5rem;
-    border: 1px solid black;
+    height: 1rem;
+    width: 4rem;
     border-radius: 10rem;
+    font-size: 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 `;
+
+export const NameUser = styled.div`
+    font-weight:bold
+`;
+
+export const CityUser = styled.div`
+    font-size:10px;
+    width:80%;
+    
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    line-height: 1.5em;
+`;
+
