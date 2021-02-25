@@ -39,3 +39,23 @@ export const sendPostFunc = (newPost) => {
     .then(res => res)
     .then(data => console.log(data))
   }
+
+  export const getSelfPosts = () => {
+    return async ( dispatch, getState ) => {
+
+    const token = getState().token || localStorage.getItem('token');
+
+    const url = 'https://motion.propulsion-home.ch/backend/api/social/posts/me/';
+    
+    const config = {
+        method: 'GET',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        })
+    }
+    const response = await fetch(url, config);
+    const posts = await response.json();
+    return posts
+    }
+}

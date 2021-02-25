@@ -13,7 +13,7 @@ const ProfileDetails = () => {
             <ProfileDetailsLeft>
                 <img src={ someoneImg } />
                 <p>{ `${firstName} ${lastName}` }</p>
-                <spam>Zürich, Switzerland</spam>
+                <span>Zürich, Switzerland</span>
                 <TransparentButton>EDIT PROFILE</TransparentButton>
             </ProfileDetailsLeft>
             <ProfileDetailsRight>

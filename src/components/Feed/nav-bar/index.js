@@ -19,13 +19,13 @@ export const NavBar = () => {
                     <img src={logo} alt='Motion Logo' />
                     <h1>Motion</h1>
                 </LogoDiv>
-                <Link to={ `/feed/${userId}/` } >
+                <Link class="no-line" to={ `/feed/${userId}/` } >
                     <PostsDiv>
                         <img src={postsLogo} alt='Posts Icon' /> 
                         <span>Posts</span>
                     </PostsDiv>
                 </Link>
-                <Link to={ `/feed/${userId}/find-friends/` } >
+                <Link class="no-line" to={ `/feed/${userId}/find-friends/` } >
                     <FriendsDiv>
                         <img src={friends} alt='Find Friends Icon' />    
                         <span>Find Friends</span>
