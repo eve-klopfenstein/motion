@@ -5,8 +5,12 @@ import friends from "../../../assets/svgs/icon-friends.svg";
 import notification from "../../../assets/svgs/notification_bell.svg";
 import user from "../../../assets/images/users/jennifer.png";
 import menu from "../../../assets/svgs/menu.svg";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 export const NavBar = () => {
+    const userId = useSelector(state => state.id);
 
     return (
         <NavBarContainer>
@@ -15,18 +19,24 @@ export const NavBar = () => {
                     <img src={logo} alt='Motion Logo' />
                     <h1>Motion</h1>
                 </LogoDiv>
-                <PostsDiv>
-                    <img src={postsLogo} alt='Posts Icon' /> 
-                    <span>Posts</span>
-                </PostsDiv>   
-                <FriendsDiv>
-                    <img src={friends} alt='Find Friends Icon' />
-                    <span>Find Friends</span>
-                </FriendsDiv> 
+                <Link to={ `/feed/${userId}/` } >
+                    <PostsDiv>
+                        <img src={postsLogo} alt='Posts Icon' /> 
+                        <span>Posts</span>
+                    </PostsDiv>
+                </Link>
+                <Link to={ `/feed/${userId}/find-friends/` } >
+                    <FriendsDiv>
+                        <img src={friends} alt='Find Friends Icon' />    
+                        <span>Find Friends</span>
+                    </FriendsDiv>
+                </Link>
             </LeftNavBarDiv>
             <RightNavBarDiv>
                 <img src={notification} alt='Notification Icon' />
-                <img src={user} alt='User Profile Picture' />
+                <Link to={ `/feed/${userId}/profile/` } >
+                    <img src={user} alt='User Profile Picture' />
+                </Link>
                 <img src={menu} alt='Menu Icon' />
             </RightNavBarDiv>
         </NavBarContainer>
