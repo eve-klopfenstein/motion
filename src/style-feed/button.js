@@ -27,6 +27,12 @@ export const PopupButton = styled.button`
     border: none;
 `
 
+export const PopupButtonHoverGray = styled(PopupButton)`
+    :hover {
+        background-color: lightgray; 
+    }
+`
+
 export const LikeIcon = styled(SuitHeartFill)`
     width: 20px;
     color: lightgray;

@@ -1,5 +1,6 @@
 import { NavBarContainer, LeftNavBarDiv, RightNavBarDiv, LogoDiv, PostsDiv, FriendsDiv } from '../../../style-feed/Nav/layout'
 import { Avatar } from '../../../style-feed/avatar';
+import { PopupButton } from '../../../style-feed/button'
 import logo from "../../../assets/images/logo.png";
 import postsLogo from "../../../assets/images/posts_logo.png";
 import friends from "../../../assets/svgs/icon-friends.svg";
@@ -10,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-export const NavBar = () => {
+export const NavBar = (props) => {
     const userId = useSelector(state => state.id);
     const avatar = useSelector( state => state.avatar );
 
@@ -39,7 +40,9 @@ export const NavBar = () => {
                 <Link to={ `/feed/${userId}/profile/` } >
                     <Avatar src={avatar ? avatar : tuna} alt='User Profile Picture' />
                 </Link>
-                <img src={menu} alt='Menu Icon' />
+                <PopupButton onClick={props.onClick}>
+                    <img src={menu} alt='Menu Icon' />
+                </PopupButton>
             </RightNavBarDiv>
         </NavBarContainer>
     )

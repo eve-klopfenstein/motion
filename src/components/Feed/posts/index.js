@@ -3,7 +3,7 @@ import PostStatus from './post-status/index.js';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPosts } from '../../../store/actions/getAllPosts.js';
-import SinglePost from './single-post';
+import { SinglePost } from './single-post';
 
 
 const PostsBody = (props) => {
@@ -57,6 +57,8 @@ const PostsBody = (props) => {
                 { posts.map( (post, index) => 
                     <SinglePost 
                     key={index} 
+                    showDeletePopUp={props.showDeletePopUp}
+                    setShowDeletePopUp={props.setShowDeletePopUp}
                     number={post.user.id} 
                     name={`${post.user.first_name} ${post.user.last_name}`} 
                     content={post.content} 
@@ -67,6 +69,7 @@ const PostsBody = (props) => {
                     postID={post.id}
                     onClick={(e) => likeHandler(e, post.content, post.id)}
                     likedByMe={post.logged_in_user_liked}
+                    postedByMe={post.is_from_logged_in_user}
                     /> 
                 )}
                 

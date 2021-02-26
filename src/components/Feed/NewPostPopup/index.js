@@ -1,11 +1,12 @@
 import { PopUp, PostSendContainer, PostSendContainerDiv, PostImgContainer } from '../../../style-feed/Posts/layout.js';
-import jenniferImg from '../../../assets/images/users/jennifer.png';
 import { SendButton, PopupButton } from '../../../style-feed/button.js';
+import { AvatarNewPost } from '../../../style-feed/avatar'
 import { useSelector, useDispatch } from 'react-redux';
 import sendIcon from '../../../assets/images/send_button.png';
 import styled from 'styled-components';
 import { useRef, useState } from 'react';
 import { sendPostFunc } from '../../../store/actions/getAllPosts.js';
+import tuna from '../../../assets/images/tuna.jpg'
 
 const NewSendButton = styled(SendButton)`
     margin-right: 15px;
@@ -17,6 +18,7 @@ const NewPostPopup = (props) => {
     const newPost = useSelector( state => state.newPost);
     let selectInput = useRef(''); 
     let selectInputImg = useRef('');
+    const avatar = useSelector( state => state.avatar );
 
     const fileClick = () => {
         selectInput.click();
@@ -40,7 +42,7 @@ const NewPostPopup = (props) => {
     return (
       <PopUp>
         <PostImgContainer>
-            <img src={jenniferImg} />
+            <AvatarNewPost src={ avatar ? avatar : tuna } />
         </PostImgContainer>
         <article>
             <p>{ newPost }</p>
