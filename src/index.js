@@ -4,7 +4,7 @@ import './index.css';
 import SignIn from './components/Home/sign-in';
 import SignUp from "./components/Home/sign-up";
 import Verification from "./components/Home/verification";
-import Congratulations from "./components/Home/Congratulations";
+import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import ProfilePage from './components/Feed/Profile';
@@ -23,7 +23,8 @@ const initialState = {
   last_name: '',
   user_name: '',
   newPost: '',
-  users: []
+  users: [],
+  requests: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -51,6 +52,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'GET_USERS':
       return {...state, users: action.payload};
+      break;
+    case 'GET_REQUESTS':
+      return {...state, requests: action.payload};
       break;
     default:
       return state;

@@ -25,9 +25,9 @@ const PostsBody = (props) => {
             <SmallPostsBodyContainer>
                 <PostStatus showPopUp={ props.showPopUp } setshowPopUp={ props.setshowPopUp } />
                 
-                { posts.map( (post, index) => 
+                { posts.map( (post) => 
                     <SinglePost 
-                    key={index} 
+                    key={post.id} 
                     number={post.user.id} 
                     name={`${post.user.first_name} ${post.user.last_name}`} 
                     content={post.content} 
