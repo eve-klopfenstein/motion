@@ -179,6 +179,7 @@ export const SubLikeShare = styled(LikeSharePart)`
         }
     }
 `
+
 export const LikesAmountP = styled.p`
     white-space: nowrap;
 `

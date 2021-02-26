@@ -58,7 +58,8 @@ class SignInBody extends Component {
             this.props.dispatch({type: 'ADD_ID', payload: id});
             this.props.dispatch({type: 'ADD_FIRST_NAME', payload: data.user.first_name});
             this.props.dispatch({type: 'ADD_LAST_NAME', payload: data.user.last_name});
-            this.props.dispatch({type: 'ADD_USERNAME', payload: data.user.username})
+            this.props.dispatch({type: 'ADD_USERNAME', payload: data.user.username});
+            this.props.dispatch({type: 'ADD_AVATAR', payload: data.user.avatar});
             this.props.history.push(`/feed/${data.user.id}`);
           } else {
             this.props.history.push("/");

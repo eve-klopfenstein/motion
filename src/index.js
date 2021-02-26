@@ -23,6 +23,7 @@ const initialState = {
   first_name: '',
   last_name: '',
   user_name: '',
+  avatar: '',
   newPost: '',
   users: []
 };
@@ -46,6 +47,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
+      break;
+    case 'ADD_AVATAR':
+      return {...state, avatar: action.payload};
       break;
     case 'NEW_POST':
       return {...state, newPost: action.payload};

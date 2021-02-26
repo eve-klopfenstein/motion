@@ -1,4 +1,3 @@
-
 export const getAllPosts = () => {
     return async ( dispatch, getState ) => {
 
@@ -31,6 +30,7 @@ export const sendPostFunc = (newPost, image) => {
     const headers = new Headers({
       'Authorization': `Bearer ${token}`
     });
+
     const config = {
         method: method,
         headers: headers,
