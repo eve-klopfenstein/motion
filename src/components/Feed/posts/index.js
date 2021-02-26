@@ -54,7 +54,7 @@ const PostsBody = (props) => {
             <SmallPostsBodyContainer>
                 <PostStatus showPopUp={ props.showPopUp } setshowPopUp={ props.setshowPopUp } />
                 
-                { posts.map( (post, index) => 
+                { posts.map( (post) => 
                     <SinglePost 
                     key={index} 
                     showDeletePopUp={props.showDeletePopUp}

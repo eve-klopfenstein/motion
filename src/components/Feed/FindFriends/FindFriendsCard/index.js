@@ -1,4 +1,4 @@
-import { CardContainer, CardImg, ThingsUserLikesDiv, FollowingButton, TransparentButton, NameUser, CityUser } from '../../../../style-feed/FindFriends/layout.js'
+import { CardContainer, CardImg, ThingsUserLikesDiv, FollowingButton, TransparentButton, NameUser, CityUser, InlineDiv, SpaceDiv} from '../../../../style-feed/FindFriends/layout.js'
 import { connect } from 'react-redux';
 import React from 'react';
 
@@ -75,17 +75,19 @@ class FindFriendsCard extends React.Component {
         
             return (
             <>    
-                        {this.props.users.length?this.props.users.map((user, index) =>
-                            <CardContainer className={user.id}>  
+                        {this.props.users.length?this.props.users.map((user) =>
+                            <CardContainer key={user.id}>  
                                 <CardImg src={user.avatar}/>
                                 <NameUser>{user.first_name} {user.last_name}</NameUser>
                                 <CityUser>{user.location} </CityUser>
-                               
-                                <CityUser><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.{user.about_me}</p></CityUser>
-                                {user.logged_in_user_is_following? <FollowingButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOWING</FollowingButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOW</TransparentButton>}                      
-                                {user.logged_in_user_is_friends? <TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}>FRIEND</TransparentButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}>ADD FRIEND</TransparentButton>}
-                                
-                                {user.things_user_likes.map((things)=><ThingsUserLikesDiv>{things}</ThingsUserLikesDiv>)}
+                                <InlineDiv>
+                                    {user.logged_in_user_is_following? <FollowingButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOWING</FollowingButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFollow(user.id)}}>FOLLOW</TransparentButton>}                      
+                                    {user.logged_in_user_is_friends? <TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}><img src="https://www.materialui.co/materialIcons/navigation/check_grey_192x192.png" height="15px" width="15px" />    FRIEND</TransparentButton> :<TransparentButton onClick={(e)=> {e.preventDefault();this.ToggleFriend(user.id)}}>ADD FRIEND</TransparentButton>}
+                                </InlineDiv> 
+                                <CityUser><p>{/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*/}{user.about_me}</p></CityUser> 
+                                <SpaceDiv>
+                                     {user.things_user_likes.map((things,index)=><ThingsUserLikesDiv key={index}>{things}</ThingsUserLikesDiv>)}
+                                </SpaceDiv>
                             </CardContainer>
                         ):"loading"}
             </>

@@ -1,24 +1,5 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
-    background-color: #EBE7E7;
-    height: 4000vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    `
-
-export const FriendsContainer = styled.div`
-    background-color: #EBE7E7;
-    height: 90vh;
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    justify-content: center;
-    // border: 3px solid red;
-`
-
 export const CardContainer = styled.div`
     width: 250px;
     height: 300px;
@@ -39,7 +20,10 @@ export const CardImg = styled.img`
     border-radius: 50%;
     background-color: #EBE7E7;
     border: 0.2px solid black;
-    margin-bottom: 10px;
+    margin: 5px;
+    margin-left: 20px;
+    
+
 `
 
 export const FollowingButton = styled.button`
@@ -111,10 +95,39 @@ export const InlineDiv= styled.div`
 
 export const SpaceDiv= styled.div`
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
     flex-wrap: wrap;
     align-items:center;
   
     width: 210px;
  `;
 
+ export const NameAvatarDiv= styled.div`
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    width: 200px;
+ `;
+
+ export const SplitDiv= styled.div`
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 300px;
+ `;
+
+ export const CardImgPending = styled.img`
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.2;
+    margin: 5px;
+    margin-left: 20px;
+`
+export const PendingDiv= styled.div`
+    display: flex;
+    justify-content:left;
+    align-items:center;
+    width: 50px;
+ `;
