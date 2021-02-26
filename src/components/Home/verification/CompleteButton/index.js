@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import styled from 'styled-components';
 import { BigButton } from "../../../../style/buttons";
+import { Link } from 'react-router-dom';
 
 const NewButton = styled(BigButton)`
     margin-top: 80px;
