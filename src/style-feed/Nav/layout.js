@@ -35,6 +35,9 @@ export const PostsDiv = styled(LogoDiv)`
     :hover{
         border-bottom: 2px solid #c568ff;
     }
+    img {
+        margin-right: 7px;
+    }
 `
 
 export const FriendsDiv = styled(PostsDiv)`

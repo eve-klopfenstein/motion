@@ -21,13 +21,13 @@ export const NavBar = () => {
                     <img src={logo} alt='Motion Logo' />
                     <h1>Motion</h1>
                 </LogoDiv>
-                <Link class="no-line" to={ `/feed/${userId}/` } >
+                <Link className="no-line" to={ `/feed/${userId}/` } >
                     <PostsDiv>
                         <img src={postsLogo} alt='Posts Icon' /> 
                         <span>Posts</span>
                     </PostsDiv>
                 </Link>
-                <Link class="no-line" to={ `/feed/${userId}/find-friends/` } >
+                <Link className="no-line" to={ `/feed/${userId}/find-friends/` } >
                     <FriendsDiv>
                         <img src={friends} alt='Find Friends Icon' />    
                         <span>Find Friends</span>
