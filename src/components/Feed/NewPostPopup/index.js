@@ -34,7 +34,7 @@ const NewPostPopup = (props) => {
     
     const sendPost = () => {
       const newImage = image;
-      sendPostFunc(newPost, newImage);
+      sendPostFunc(newPost, image);
       props.setshowPopUp(false);
       dispatch({type: 'NEW_POST', payload: ''});
     }
