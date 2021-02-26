@@ -1,4 +1,3 @@
-
 export const getAllPosts = () => {
     return async ( dispatch, getState ) => {
 
@@ -25,10 +24,12 @@ export const sendPostFunc = (newPost) => {
     const body = {
         content: newPost
     };
+
     const headers = new Headers({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
+
     const config = {
         method: method,
         headers: headers,

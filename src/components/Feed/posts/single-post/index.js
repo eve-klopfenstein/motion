@@ -1,5 +1,6 @@
 import React from 'react';
 import { PostDiv, TopPartPost, ContentPart, ImagePart, LikeSharePart,UserTimeWrapper, SubLikeShare, LikesAmountP, NameDiv, TimeDiv } from '../../../../style-feed/Posts/layout' 
+import { LikeIcon, LikeIconClicked, ShareIcon } from '../../../../style-feed/button'
 import { Avatar } from '../../../../style-feed/avatar'
 import tuna from '../../../../assets/images/tuna.jpg'
 import like from '../../../../assets/svgs/heart.svg'
@@ -7,35 +8,7 @@ import share from '../../../../assets/svgs/share.svg'
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 
-export class SinglePost extends React.Component {
-
-    state = {
-        content: ''
-    }
-
-    likeHandler = () => {
-
-        console.log(this.props.token)
-        
-        this.setState({
-            content: this.props.content
-        })
-        const url = `https://motion.propulsion-home.ch/backend/api/social/posts/toggle-like/${this.props.postID}/`
-        const config = {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.props.token}`
-            })
-        }
-        
-        fetch(url, config)
-            .then( res => res.json() )
-            .then( data => {
-                console.log(this.props.token)
-            })
-    }
+class SinglePost extends React.Component {
 
     render() {
         return (
@@ -62,14 +35,14 @@ export class SinglePost extends React.Component {
                 <LikeSharePart>
                     <SubLikeShare>
                         <div>
-                            <button onClick={this.likeHandler}>
-                                <img src={like} />
+                            <button onClick={this.props.onClick}>
+                                { this.props.likedByMe ? <LikeIconClicked/> : <LikeIcon/> }
                             </button>
                             <p>Like</p>
                         </div>
                         <div>
                             <button>
-                                <img src={share} />
+                                <ShareIcon src={share} />
                             </button>
                             <p>Share</p>
                         </div>
