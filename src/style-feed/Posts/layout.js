@@ -8,12 +8,14 @@ export const FeedComtainer = styled.section`
 // pop-up!!!
 export const PopUpContainer = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 2;
     background-color: black;
     opacity: 0.8;
     position: absolute;
+
 `
+
 export const PopUp = styled.div`
     height: 300px;
     width: 300px;
@@ -61,6 +63,37 @@ export const PostSendContainerDiv = styled.div`
     margin-left: 10px;
 `
 
+//Delete Post Pop-up
+export const DeletePopUpContainer = styled.div`
+    width: 500px;
+    height: 400px;
+    background: white;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+` 
+
+//Menu Pop-up
+export const MenuPopUpContainer = styled.div`
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    right: 20px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    button {
+        width: 100%;
+        height: 2rem;
+    }
+`
+
+//Feed
 export const BigPostsBodyContainer = styled.div`
     background-color: #EBE7E7;
     min-height: 80vh;
@@ -73,14 +106,6 @@ export const SmallPostsBodyContainer = styled.div`
     padding: 10px;
     column-count: 2;
     column-gap: 1em;
-    /* display: grid;
-    grid-template-columns: repeat(2, minmax(250px,1fr));
-    grid-auto-rows: 200px; */
-    /* grid-template-rows: minmax(100px, auto); */ 
-
-    /* display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; */
 `
 
 //Posts status update
@@ -179,6 +204,7 @@ export const SubLikeShare = styled(LikeSharePart)`
         }
     }
 `
+
 export const LikesAmountP = styled.p`
     white-space: nowrap;
 `

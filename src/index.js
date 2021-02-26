@@ -8,6 +8,7 @@ import Congratulations from "./components/Home/congratulations";
 import reportWebVitals from './reportWebVitals';
 import Feed from './components/Feed';
 import ProfilePage from './components/Feed/Profile';
+import EditProfilePage from './components/Feed/EditProfile';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -22,6 +23,7 @@ const initialState = {
   first_name: '',
   last_name: '',
   user_name: '',
+  avatar: '',
   newPost: '',
   users: [],
   requests: []
@@ -46,6 +48,9 @@ const reducer = (state = initialState, action) => {
       break;
     case 'ADD_USERNAME':
       return {...state, user_name: action.payload};
+      break;
+    case 'ADD_AVATAR':
+      return {...state, avatar: action.payload};
       break;
     case 'NEW_POST':
       return {...state, newPost: action.payload};
@@ -81,7 +86,8 @@ ReactDOM.render(
       <Route exact path="/sign-up/verification/" component={ Verification }/>     
       <Route exact path="/feed/:id/" component={ Feed } />
       <Route exact path="/feed/:id/find-friends/" component={ FindFriends } />
-      <Route exact path="/feed/:id/profile" component={ ProfilePage } />
+      <Route exact path="/feed/:id/profile/" component={ ProfilePage } />
+      <Route exact path="/feed/:id/edit-profile/" component={ EditProfilePage } />
     </Switch>
   </Router>
 </Provider>,

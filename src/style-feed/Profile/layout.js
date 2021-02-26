@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ProfilePageContainer = styled.div`
     position: relative;
     height: 100vh;
+    overflow-y: scroll;
     width: 100vw;
     background-color: rgb(235, 231, 231);
 `
@@ -17,7 +18,7 @@ export const ProfileBodyMain = styled.section`
 `
 export const ProfileDetailsContainer = styled.section`
     background-color: white;
-    height: 200px;
+    height: 250px;
     display: flex;
 `
 export const ProfileDetailsLeft = styled.article`
@@ -56,6 +57,34 @@ export const UpperRightDiv = styled.div`
     height: 70%;
     width: 100%;
     border-bottom: 3px solid rgb(235, 231, 231);
+    display: flex;
+`
+export const UpperRightLeft = styled.div`
+   width: 50%;
+   height: 100%;
+   div {
+       width: 100%;
+       height: 50%;
+       h2 {
+           font-size: 1rem;
+           margin-left: 15px;
+           margin-bottom: 5px;
+       }
+       p {
+           margin-top: 0;
+           margin-left: 15px;
+       }
+    }
+    section {
+        display: flex;
+    }
+`
+export const UpperRightRight = styled.div`
+    width: 50%;
+    height: 100%;
+    h2 {
+        font-size: 1rem;
+    }
 `
 export const LowerRightDiv = styled.div`
     height: 30%;
@@ -68,11 +97,18 @@ export const LowerRightDiv = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: gray;
+        span {
+            margin-top: 8px;
+            font-size: 1.5rem;
+        }
+        p {
+            color: gray;
+            margin-top: 0;
+        }
     }
 `
 export const ProfilePostsContainer = styled.section`
-    background-color: white;
+    background-color: rgb(235, 231, 231);
     margin-top: 20px;
     height: 1000px;
 `
