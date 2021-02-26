@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Profile page
 export const ProfilePageContainer = styled.div`
     position: relative;
     height: 100vh;
@@ -111,4 +112,51 @@ export const ProfilePostsContainer = styled.section`
     background-color: rgb(235, 231, 231);
     margin-top: 20px;
     height: 1000px;
+`
+
+// Edit profile page
+export const EditProfileLeft = styled.section`
+    height: 100%;
+    width: 25%;
+    border-right: 3px solid rgb(235, 231, 231);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        height: 60px;
+        width: 60px;
+        margin-top: 20px;
+    }
+    button {
+        font-size: 0.7rem;
+        margin-top: 30px;
+    }
+`
+export const EditProfileRight = styled.section`
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    div:nth-of-type(1) {
+        margin-top: 30px;
+    }
+    div:nth-of-type(2) {
+        margin-top: 30px;
+    }
+    div:nth-of-type(7){
+        input {
+            width: 33rem;
+        }
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+        input {
+            border: none;
+            border-bottom: 1px solid gray;
+            height: 2rem;
+            width: 15rem;
+        }
+    }
 `

@@ -20,8 +20,8 @@ export const getAllPosts = () => {
 export const sendPostFunc = (newPost, image) => {
     const formData = new FormData();
     console.log(newPost);
-    formData.append('content', image);
-    formData.append('image', newPost);
+    formData.append('content', newPost);
+    formData.append('images', image);
 
     const token = localStorage.getItem('token');
     const url = "https://motion.propulsion-home.ch/backend/api/social/posts/";
@@ -34,7 +34,7 @@ export const sendPostFunc = (newPost, image) => {
     const config = {
         method: method,
         headers: headers,
-        body: formData 
+        body: formData
     };
 
     fetch(url, config)
